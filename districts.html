@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-<style>
+<style type="text/css">
 
 body {
 	margin:0;
@@ -14,26 +14,6 @@ body {
 	margin-top:20px;
 }
 	
-path {
-	stroke-linejoin: round;
-	stroke-linecap: round;
-}
-
-.districts {
-	fill: #bbb;
-}
-
-.districts :hover {
-	fill: orange;
-}
-
-.district-boundaries {
-	pointer-events: none;
-	fill: none;
-	stroke: #fff;
-	stroke-width: .5px;
-}
-
 #tooltip-container {
 	position: absolute;
 	background-color: #fff;
@@ -83,40 +63,34 @@ path {
 		color.domain([0,1,2,3,4]);
 		
 		var width = wholeApp.clientWidth;
-		<!-- width = (width > 940 ? 940 : width) -->
-		
-		dimensions = {
-			width: width,
-			height: width * 0.6
-		  };
-		  
+		width = (width > 940 ? 940 : width)
+		var height = width *0.7;
+				  
 		var projection = d3.geo.albersUsa()
 		.scale(1280)
-		.translate([width / 2, dimensions.height / 2]);
-	   
+		.translate([width / 2, height / 2]);
+
 		var path = d3.geo.path()
 		.projection(projection)
 
-		var legendText = ["Reste démocrate", "Devient démocrate", "Reste républicain", "Devient républicain", "Résultats indisponibles"];
-		
 		var zoom = d3.behavior.zoom()
-		.translate(projection.translate())
-		.scale(projection.scale())
-		.scaleExtent([2 * dimensions.height, 50 * dimensions.height])
-		.on("zoom", zoomed);
-		
-		function zoomed() {
-			projection.translate(d3.event.translate).scale(d3.event.scale);
-			svg.selectAll("path").attr("d", path);
-		}
+			.translate(projection.translate())
+			.scale(projection.scale())
+			.scaleExtent([height, 8 * height])
+			.on("zoom", zoomed);
+
+		var legendText = ["Reste démocrate", "Devient démocrate", "Reste républicain", "Devient républicain", "Résultats indisponibles"];
 
 		var svg = d3.select("#canvas-svg").append("svg")
-		<!-- .call(zoom) -->
 		.attr("width", width)
-		.attr("height", width *0.7);
-		
+		.attr("height", height)
+
+		var g = svg.append("g")
+		.call(zoom);
 
 		d3.json("https://nicolasenault.github.io/last_districts.topojson", function(error, congress) {
+		
+		if (error) throw error;
 		
 		// Loop through each state data value in the .csv file
 		for (var i = 0; i < data.length; i++) {
@@ -145,7 +119,7 @@ path {
 			}
 		}
 				
-			svg.append("g")
+			g.append("g")
 			.data(congress.objects.districts.geometries)
 			.attr("class", "districts")
 			.attr("clip-path", "url(#clip-land)")
@@ -153,7 +127,9 @@ path {
 			.data(topojson.feature(congress, congress.objects.districts).features)
 			.enter().append("path")
 			.attr("d", path)
-			
+			.style("stroke", "#fff")
+			.style("stroke-width", "0.5px")
+
 			.style("fill", function(d) {
 				var value = d.properties.elu;
 					if (value=='D') {
@@ -218,10 +194,11 @@ path {
 				$("#tooltip-container").hide();
 			});
 				
-			svg.append("path")
+			g.append("g")
 			.attr("class", "district-boundaries")
 			.datum(topojson.mesh(congress, congress.objects.districts, function(a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); }))
 			.attr("d", path)
+
 			
 			var legend = d3.select("body").append("svg")
       			.attr("class", "legend")
@@ -244,8 +221,11 @@ path {
 				  .attr("y", 9)
 				  .attr("dy", ".35em")
 				  .text(function(d) { return d; });
-		
+		 });
+		function zoomed() {
+		  projection.translate(d3.event.translate).scale(d3.event.scale);
+		  g.selectAll("path").attr("d", path);
+		}
 	  });
-});
 
 </script>
