@@ -96,6 +96,19 @@ body {
         opacity: 1;
         z-index: 3;
 }
+.tooltip_kv {
+    overflow-x: hidden;
+    background: url('https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/img/light.png') repeat-y 452px 0
+}
+.tooltip_content {
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden!important;
+    outline: 0;
+    text-align: left
+}
 </style>
 </head>
 <body>
@@ -210,12 +223,14 @@ body {
 			var html = "";
 				html += "<a href=\"#\" onclick=\"closy()\" class=\"closy\">x</a>";
 				html += "<div class=\"tooltip_kv\">";
+				html += "<div class=\"tooltip_content\">";
 				html += "<span class=\"tooltip_key\">";
 				html += d.properties.fr;
 				html += "</span>";
 				html += "<span class=\"tooltip_key\"> - District n°";
 				html += d.properties.cd115fp;
 				html += "</span>";
+				html += "</div>";
 				html += "</div>";
 				html += "<div class=\"popup-tip\">";
 				html += "</div>";
