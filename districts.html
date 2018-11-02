@@ -66,7 +66,7 @@ body {
         right: -11px;
         width: 26px;
         height: 26px;
-        background: url('https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/img/light.png') no-repeat 0 -23px;
+        background: url('https://nicolasenault.github.io/light.png') no-repeat 0 -23px;
         text-indent: -9999px;
         font-size: 0;
         line-height: 0;
@@ -81,7 +81,7 @@ body {
         left: 23px;
         width: 16px;
         height: 14px;
-        background: url('https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/img/light.png') no-repeat -23px -7px;
+        background: url('https://nicolasenault.github.io/light.png') no-repeat -23px -7px;
         text-indent: -9999px;
         font-size: 0;
         line-height: 0;
@@ -217,12 +217,9 @@ body {
 				$("#tooltip-container").hide();
 				$("#tooltip-container-click").show();
 
-						
-				var coordinates = d3.mouse(this);
-
 				var tooltip_width = $("#tooltip-container-click").width();
 				d3.select("#tooltip-container-click")
-				.style("top", (d3.event.layerY - 50) + "px")
+				.style("top", (d3.event.layerY - 200) + "px")
 				.style("left", (d3.event.layerX - tooltip_width / 2) + "px");
 			})	
 
@@ -242,12 +239,10 @@ body {
 				<!-- $("#tooltip-container-click").hide(); -->
 				$("#tooltip-container").show();
 						
-				var coordinates = d3.mouse(this);
-
-				var tooltip_width = $("#tooltip-container").width();
+				var tooltip_width2 = $("#tooltip-container").width();
 				d3.select("#tooltip-container")
 				.style("top", (d3.event.layerY + 25) + "px")
-				.style("left", (d3.event.layerX - tooltip_width / 2) + "px");
+				.style("left", (d3.event.layerX - tooltip_width2 / 2) + "px");
 			})
 			
 			.on("mouseout", function() {
