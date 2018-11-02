@@ -63,11 +63,10 @@ body {
 		color.domain([0,1,2,3,4]);
 		
 		var width = wholeApp.clientWidth;
-		width = (width > 940 ? 940 : width)
 		var height = width *0.7;
 				  
 		var projection = d3.geo.albersUsa()
-		.scale(400)
+		.scale((document.location.href.indexOf('www.') > 0 )?1280:400)
 		.translate([width / 2, height / 2]);
 
 		var path = d3.geo.path()
