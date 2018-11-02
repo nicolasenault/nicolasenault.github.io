@@ -14,7 +14,7 @@ body {
 	margin-top:20px;
 }
 	
-#tooltip-container {
+#tooltip-container, #tooltip-container-click {
 	position: absolute;
 	background-color: #fff;
 	color: #000;
@@ -37,12 +37,28 @@ body {
 	font-size: 11px;
 	font-family: 'Roboto';
 }
+.closy {
+        position: absolute;
+        top: -12px;
+        right: -11px;
+        width: 26px;
+        height: 26px;
+        background: url('https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/img/light.png') no-repeat 0 -23px;
+        text-indent: -9999px;
+        font-size: 0;
+        line-height: 0;
+        opacity: 1;
+        text-transform: uppercase;
+        z-index: 3;
+		border-bottom:0px !important;
+    }
 
 </style>
 
 <body>
 	<div id="wholeApp">
 		<div id="tooltip-container"></div>
+		<div id="tooltip-container-click"></div>
 		<div id="canvas-svg"></div>
 	</div>
 </body>
@@ -54,6 +70,10 @@ body {
 <script>
 
 	var wholeApp = document.getElementById("wholeApp");
+
+	function closy() {
+		  $("#tooltip-container-click").hide();
+	}
 	
 	var color = d3.scale.linear()
 			  .range(["#73b5ea","#1f76bd","#e49292","#c54646","#e2e2e2"]);
@@ -140,9 +160,10 @@ body {
 				return "#e2e2e2";
 				}
 				})
-				
+
 			.on("click", function(d) {	
 			var html = "";
+				html += "<a href=\"#\" onclick=\"closy()\" class=\"closy\">x</a>";
 				html += "<div class=\"tooltip_kv\">";
 				html += "<span class=\"tooltip_key\">";
 				html += d.properties.fr;
@@ -151,20 +172,21 @@ body {
 				html += d.properties.cd115fp;
 				html += "</span>";
 				html += "</div>";
-						
+	
 				$(this).attr("fill-opacity", "0.8");
-				$("#tooltip-container").html(html);
-				$("#tooltip-container").show();
+				$("#tooltip-container-click").html(html);
+				$("#tooltip-container").hide();
+				$("#tooltip-container-click").show();
+
 						
 				var coordinates = d3.mouse(this);
 
-				var tooltip_width = $("#tooltip-container").width();
-				d3.select("#tooltip-container")
-				.style("top", (d3.event.layerY + 25) + "px")
+				var tooltip_width = $("#tooltip-container-click").width();
+				d3.select("#tooltip-container-click")
+				.style("top", (d3.event.layerY - 50) + "px")
 				.style("left", (d3.event.layerX - tooltip_width / 2) + "px");
-			})
-				
-				
+			})	
+
 			.on("mousemove", function(d) {
 				var html = "";
 				html += "<div class=\"tooltip_kv\">";
@@ -178,6 +200,7 @@ body {
 						
 				$(this).attr("fill-opacity", "0.8");
 				$("#tooltip-container").html(html);
+				$("#tooltip-container-click").hide();
 				$("#tooltip-container").show();
 						
 				var coordinates = d3.mouse(this);
