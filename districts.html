@@ -87,7 +87,7 @@ path {
 		
 		dimensions = {
 			width: width,
-			height: width - 350
+			height: width * 0.6
 		  };
 		  
 		var projection = d3.geo.albersUsa()
@@ -113,7 +113,7 @@ path {
 		var svg = d3.select("#canvas-svg").append("svg")
 		<!-- .call(zoom) -->
 		.attr("width", width)
-		.attr("height", width - 350);
+		.attr("height", width *0.7);
 		
 
 		d3.json("https://nicolasenault.github.io/last_districts.topojson", function(error, congress) {
