@@ -49,6 +49,10 @@ body {
 		font-size: 8px !important;
 		font-family: 'Roboto';
 	}
+	.districts{
+		stroke:#fff;
+		stroke-width:0.2px !important;
+	}
 }
 .legend {
 	position:absolute;
@@ -87,6 +91,10 @@ body {
         line-height: 0;
         opacity: 1;
         z-index: 3;
+}
+.districts{
+stroke:#fff;
+stroke-width:0.5px;
 }
 </style>
 </head>
@@ -192,8 +200,6 @@ body {
 			.data(topojson.feature(congress, congress.objects.districts).features)
 			.enter().append("path")
 			.attr("d", path)
-			.style("stroke", "#fff")
-			.style("stroke-width", "0.5px")
 
 			.style("fill", function(d) {
 				var value = d.properties.elu;
