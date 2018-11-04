@@ -150,6 +150,7 @@ body {
 	
 			function touch() {
 		  d3.event.preventDefault();
+		  $("#tooltip-container-click").hide();
 		  }
 
 		d3.json("https://nicolasenault.github.io/last_districts.topojson", function(error, congress) {
