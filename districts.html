@@ -144,6 +144,13 @@ body {
 		svg
 		.call(zoom)
 		.call(zoom.event);
+		
+		d3.select("wholeApp")
+    .on("touchmove", touch);
+	
+	function touch() {
+  d3.event.preventDefault();
+  }
 
 		d3.json("https://nicolasenault.github.io/last_districts.topojson", function(error, congress) {
 		
