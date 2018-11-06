@@ -1,0 +1,438 @@
+temp	statefp	cd115fp	affgeoid	id	state	fr	abr	elu	name	percent_dem	percent_rep
+Alaska-1	2	0	5001500US0200	0200	Alaska	Alaska	AK	R	John	52	32
+Alabama-1	1	1	5001500US0101	0101	Alabama	Alabama	AL	D	Bobby	12	65
+Alabama-2	1	2	5001500US0102	0102	Alabama	Alabama	AL	DD	Filou	14	85
+Alabama-3	1	3	5001500US0103	0103	Alabama	Alabama	AL	RR	Sergio	65	12
+Alabama-4	1	4	5001500US0104	0104	Alabama	Alabama	AL				
+Alabama-5	1	5	5001500US0105	0105	Alabama	Alabama	AL				
+Alabama-6	1	6	5001500US0106	0106	Alabama	Alabama	AL				
+Alabama-7	1	7	5001500US0107	0107	Alabama	Alabama	AL				
+Arizona-1	4	1	5001500US0401	0401	Arizona	Arizona	AZ				
+Arizona-2	4	2	5001500US0402	0402	Arizona	Arizona	AZ				
+Arizona-3	4	3	5001500US0403	0403	Arizona	Arizona	AZ				
+Arizona-4	4	4	5001500US0404	0404	Arizona	Arizona	AZ				
+Arizona-5	4	5	5001500US0405	0405	Arizona	Arizona	AZ				
+Arizona-6	4	6	5001500US0406	0406	Arizona	Arizona	AZ				
+Arizona-7	4	7	5001500US0407	0407	Arizona	Arizona	AZ				
+Arizona-8	4	8	5001500US0408	0408	Arizona	Arizona	AZ				
+Arizona-9	4	9	5001500US0409	0409	Arizona	Arizona	AZ				
+Arkansas-1	5	1	5001500US0501	0501	Arkansas	Arkansas	AR				
+Arkansas-2	5	2	5001500US0502	0502	Arkansas	Arkansas	AR				
+Arkansas-3	5	3	5001500US0503	0503	Arkansas	Arkansas	AR				
+Arkansas-4	5	4	5001500US0504	0504	Arkansas	Arkansas	AR				
+California-1	6	1	5001500US0601	0601	California	Californie	CA				
+California-10	6	10	5001500US0610	0610	California	Californie	CA				
+California-11	6	11	5001500US0611	0611	California	Californie	CA				
+California-12	6	12	5001500US0612	0612	California	Californie	CA				
+California-13	6	13	5001500US0613	0613	California	Californie	CA				
+California-14	6	14	5001500US0614	0614	California	Californie	CA				
+California-15	6	15	5001500US0615	0615	California	Californie	CA				
+California-16	6	16	5001500US0616	0616	California	Californie	CA				
+California-17	6	17	5001500US0617	0617	California	Californie	CA				
+California-18	6	18	5001500US0618	0618	California	Californie	CA				
+California-19	6	19	5001500US0619	0619	California	Californie	CA				
+California-2	6	2	5001500US0602	0602	California	Californie	CA				
+California-20	6	20	5001500US0620	0620	California	Californie	CA				
+California-21	6	21	5001500US0621	0621	California	Californie	CA				
+California-22	6	22	5001500US0622	0622	California	Californie	CA				
+California-23	6	23	5001500US0623	0623	California	Californie	CA				
+California-24	6	24	5001500US0624	0624	California	Californie	CA				
+California-25	6	25	5001500US0625	0625	California	Californie	CA				
+California-26	6	26	5001500US0626	0626	California	Californie	CA				
+California-27	6	27	5001500US0627	0627	California	Californie	CA				
+California-28	6	28	5001500US0628	0628	California	Californie	CA				
+California-29	6	29	5001500US0629	0629	California	Californie	CA				
+California-3	6	3	5001500US0603	0603	California	Californie	CA				
+California-30	6	30	5001500US0630	0630	California	Californie	CA				
+California-31	6	31	5001500US0631	0631	California	Californie	CA				
+California-32	6	32	5001500US0632	0632	California	Californie	CA				
+California-33	6	33	5001500US0633	0633	California	Californie	CA				
+California-34	6	34	5001500US0634	0634	California	Californie	CA				
+California-35	6	35	5001500US0635	0635	California	Californie	CA				
+California-36	6	36	5001500US0636	0636	California	Californie	CA				
+California-37	6	37	5001500US0637	0637	California	Californie	CA				
+California-38	6	38	5001500US0638	0638	California	Californie	CA				
+California-39	6	39	5001500US0639	0639	California	Californie	CA				
+California-4	6	4	5001500US0604	0604	California	Californie	CA				
+California-40	6	40	5001500US0640	0640	California	Californie	CA				
+California-41	6	41	5001500US0641	0641	California	Californie	CA				
+California-42	6	42	5001500US0642	0642	California	Californie	CA				
+California-43	6	43	5001500US0643	0643	California	Californie	CA				
+California-44	6	44	5001500US0644	0644	California	Californie	CA				
+California-45	6	45	5001500US0645	0645	California	Californie	CA				
+California-46	6	46	5001500US0646	0646	California	Californie	CA				
+California-47	6	47	5001500US0647	0647	California	Californie	CA				
+California-48	6	48	5001500US0648	0648	California	Californie	CA				
+California-49	6	49	5001500US0649	0649	California	Californie	CA				
+California-5	6	5	5001500US0605	0605	California	Californie	CA				
+California-50	6	50	5001500US0650	0650	California	Californie	CA				
+California-51	6	51	5001500US0651	0651	California	Californie	CA				
+California-52	6	52	5001500US0652	0652	California	Californie	CA				
+California-53	6	53	5001500US0653	0653	California	Californie	CA				
+California-6	6	6	5001500US0606	0606	California	Californie	CA				
+California-7	6	7	5001500US0607	0607	California	Californie	CA				
+California-8	6	8	5001500US0608	0608	California	Californie	CA				
+California-9	6	9	5001500US0609	0609	California	Californie	CA				
+Colorado-1	8	1	5001500US0801	0801	Colorado	Colorado	CO				
+Colorado-2	8	2	5001500US0802	0802	Colorado	Colorado	CO				
+Colorado-3	8	3	5001500US0803	0803	Colorado	Colorado	CO				
+Colorado-4	8	4	5001500US0804	0804	Colorado	Colorado	CO				
+Colorado-5	8	5	5001500US0805	0805	Colorado	Colorado	CO				
+Colorado-6	8	6	5001500US0806	0806	Colorado	Colorado	CO				
+Colorado-7	8	7	5001500US0807	0807	Colorado	Colorado	CO				
+Connecticut-1	9	1	5001500US0901	0901	Connecticut	Connecticut	CT				
+Connecticut-2	9	2	5001500US0902	0902	Connecticut	Connecticut	CT				
+Connecticut-3	9	3	5001500US0903	0903	Connecticut	Connecticut	CT				
+Connecticut-4	9	4	5001500US0904	0904	Connecticut	Connecticut	CT				
+Connecticut-5	9	5	5001500US0905	0905	Connecticut	Connecticut	CT				
+Delaware-0	10	0	5001500US1000	1000	Delaware	Delaware	DE				
+District of Columbia-98	11	98	5001500US1198	1198	District of Columbia	District of Columbia	DC				
+Florida-1	12	1	5001500US1201	1201	Florida	Floride	FL				
+Florida-10	12	10	5001500US1210	1210	Florida	Floride	FL				
+Florida-11	12	11	5001500US1211	1211	Florida	Floride	FL				
+Florida-12	12	12	5001500US1212	1212	Florida	Floride	FL				
+Florida-13	12	13	5001500US1213	1213	Florida	Floride	FL				
+Florida-14	12	14	5001500US1214	1214	Florida	Floride	FL				
+Florida-15	12	15	5001500US1215	1215	Florida	Floride	FL				
+Florida-16	12	16	5001500US1216	1216	Florida	Floride	FL				
+Florida-17	12	17	5001500US1217	1217	Florida	Floride	FL				
+Florida-18	12	18	5001500US1218	1218	Florida	Floride	FL				
+Florida-19	12	19	5001500US1219	1219	Florida	Floride	FL				
+Florida-2	12	2	5001500US1202	1202	Florida	Floride	FL				
+Florida-20	12	20	5001500US1220	1220	Florida	Floride	FL				
+Florida-21	12	21	5001500US1221	1221	Florida	Floride	FL				
+Florida-22	12	22	5001500US1222	1222	Florida	Floride	FL				
+Florida-23	12	23	5001500US1223	1223	Florida	Floride	FL				
+Florida-24	12	24	5001500US1224	1224	Florida	Floride	FL				
+Florida-25	12	25	5001500US1225	1225	Florida	Floride	FL				
+Florida-26	12	26	5001500US1226	1226	Florida	Floride	FL				
+Florida-27	12	27	5001500US1227	1227	Florida	Floride	FL				
+Florida-3	12	3	5001500US1203	1203	Florida	Floride	FL				
+Florida-4	12	4	5001500US1204	1204	Florida	Floride	FL				
+Florida-5	12	5	5001500US1205	1205	Florida	Floride	FL				
+Florida-6	12	6	5001500US1206	1206	Florida	Floride	FL				
+Florida-7	12	7	5001500US1207	1207	Florida	Floride	FL				
+Florida-8	12	8	5001500US1208	1208	Florida	Floride	FL				
+Florida-9	12	9	5001500US1209	1209	Florida	Floride	FL				
+Georgia-1	13	1	5001500US1301	1301	Georgia	Géorgie	GA				
+Georgia-10	13	10	5001500US1310	1310	Georgia	Géorgie	GA				
+Georgia-11	13	11	5001500US1311	1311	Georgia	Géorgie	GA				
+Georgia-12	13	12	5001500US1312	1312	Georgia	Géorgie	GA				
+Georgia-13	13	13	5001500US1313	1313	Georgia	Géorgie	GA				
+Georgia-14	13	14	5001500US1314	1314	Georgia	Géorgie	GA				
+Georgia-2	13	2	5001500US1302	1302	Georgia	Géorgie	GA				
+Georgia-3	13	3	5001500US1303	1303	Georgia	Géorgie	GA				
+Georgia-4	13	4	5001500US1304	1304	Georgia	Géorgie	GA				
+Georgia-5	13	5	5001500US1305	1305	Georgia	Géorgie	GA				
+Georgia-6	13	6	5001500US1306	1306	Georgia	Géorgie	GA				
+Georgia-7	13	7	5001500US1307	1307	Georgia	Géorgie	GA				
+Georgia-8	13	8	5001500US1308	1308	Georgia	Géorgie	GA				
+Georgia-9	13	9	5001500US1309	1309	Georgia	Géorgie	GA				
+Hawaii-1	15	1	5001500US1501	1501	Hawaii	Hawaii	HI				
+Hawaii-2	15	2	5001500US1502	1502	Hawaii	Hawaii	HI				
+Idaho-1	16	1	5001500US1601	1601	Idaho	Idaho	ID				
+Idaho-2	16	2	5001500US1602	1602	Idaho	Idaho	ID				
+Illinois-1	17	1	5001500US1701	1701	Illinois	Illinois	IL				
+Illinois-10	17	10	5001500US1710	1710	Illinois	Illinois	IL				
+Illinois-11	17	11	5001500US1711	1711	Illinois	Illinois	IL				
+Illinois-12	17	12	5001500US1712	1712	Illinois	Illinois	IL				
+Illinois-13	17	13	5001500US1713	1713	Illinois	Illinois	IL				
+Illinois-14	17	14	5001500US1714	1714	Illinois	Illinois	IL				
+Illinois-15	17	15	5001500US1715	1715	Illinois	Illinois	IL				
+Illinois-16	17	16	5001500US1716	1716	Illinois	Illinois	IL				
+Illinois-17	17	17	5001500US1717	1717	Illinois	Illinois	IL				
+Illinois-18	17	18	5001500US1718	1718	Illinois	Illinois	IL				
+Illinois-2	17	2	5001500US1702	1702	Illinois	Illinois	IL				
+Illinois-3	17	3	5001500US1703	1703	Illinois	Illinois	IL				
+Illinois-4	17	4	5001500US1704	1704	Illinois	Illinois	IL				
+Illinois-5	17	5	5001500US1705	1705	Illinois	Illinois	IL				
+Illinois-6	17	6	5001500US1706	1706	Illinois	Illinois	IL				
+Illinois-7	17	7	5001500US1707	1707	Illinois	Illinois	IL				
+Illinois-8	17	8	5001500US1708	1708	Illinois	Illinois	IL				
+Illinois-9	17	9	5001500US1709	1709	Illinois	Illinois	IL				
+Indiana-1	18	1	5001500US1801	1801	Indiana	Indiana	IN				
+Indiana-2	18	2	5001500US1802	1802	Indiana	Indiana	IN				
+Indiana-3	18	3	5001500US1803	1803	Indiana	Indiana	IN				
+Indiana-4	18	4	5001500US1804	1804	Indiana	Indiana	IN				
+Indiana-5	18	5	5001500US1805	1805	Indiana	Indiana	IN				
+Indiana-6	18	6	5001500US1806	1806	Indiana	Indiana	IN				
+Indiana-7	18	7	5001500US1807	1807	Indiana	Indiana	IN				
+Indiana-8	18	8	5001500US1808	1808	Indiana	Indiana	IN				
+Indiana-9	18	9	5001500US1809	1809	Indiana	Indiana	IN				
+Iowa-1	19	1	5001500US1901	1901	Iowa	Iowa	IA				
+Iowa-2	19	2	5001500US1902	1902	Iowa	Iowa	IA				
+Iowa-3	19	3	5001500US1903	1903	Iowa	Iowa	IA				
+Iowa-4	19	4	5001500US1904	1904	Iowa	Iowa	IA				
+Kansas-1	20	1	5001500US2001	2001	Kansas	Kansas	KS				
+Kansas-2	20	2	5001500US2002	2002	Kansas	Kansas	KS				
+Kansas-3	20	3	5001500US2003	2003	Kansas	Kansas	KS				
+Kansas-4	20	4	5001500US2004	2004	Kansas	Kansas	KS				
+Kentucky-1	21	1	5001500US2101	2101	Kentucky	Kentucky	KY				
+Kentucky-2	21	2	5001500US2102	2102	Kentucky	Kentucky	KY				
+Kentucky-3	21	3	5001500US2103	2103	Kentucky	Kentucky	KY				
+Kentucky-4	21	4	5001500US2104	2104	Kentucky	Kentucky	KY				
+Kentucky-5	21	5	5001500US2105	2105	Kentucky	Kentucky	KY				
+Kentucky-6	21	6	5001500US2106	2106	Kentucky	Kentucky	KY				
+Louisiana-1	22	1	5001500US2201	2201	Louisiana	Louisiane	LA				
+Louisiana-2	22	2	5001500US2202	2202	Louisiana	Louisiane	LA				
+Louisiana-3	22	3	5001500US2203	2203	Louisiana	Louisiane	LA				
+Louisiana-4	22	4	5001500US2204	2204	Louisiana	Louisiane	LA				
+Louisiana-5	22	5	5001500US2205	2205	Louisiana	Louisiane	LA				
+Louisiana-6	22	6	5001500US2206	2206	Louisiana	Louisiane	LA				
+Maine-1	23	1	5001500US2301	2301	Maine	Maine	ME				
+Maine-2	23	2	5001500US2302	2302	Maine	Maine	ME				
+Maryland-1	24	1	5001500US2401	2401	Maryland	Maryland	MD				
+Maryland-2	24	2	5001500US2402	2402	Maryland	Maryland	MD				
+Maryland-3	24	3	5001500US2403	2403	Maryland	Maryland	MD				
+Maryland-4	24	4	5001500US2404	2404	Maryland	Maryland	MD				
+Maryland-5	24	5	5001500US2405	2405	Maryland	Maryland	MD				
+Maryland-6	24	6	5001500US2406	2406	Maryland	Maryland	MD				
+Maryland-7	24	7	5001500US2407	2407	Maryland	Maryland	MD				
+Maryland-8	24	8	5001500US2408	2408	Maryland	Maryland	MD				
+Massachusetts-1	25	1	5001500US2501	2501	Massachusetts	Massachusetts	MA				
+Massachusetts-2	25	2	5001500US2502	2502	Massachusetts	Massachusetts	MA				
+Massachusetts-3	25	3	5001500US2503	2503	Massachusetts	Massachusetts	MA				
+Massachusetts-4	25	4	5001500US2504	2504	Massachusetts	Massachusetts	MA				
+Massachusetts-5	25	5	5001500US2505	2505	Massachusetts	Massachusetts	MA				
+Massachusetts-6	25	6	5001500US2506	2506	Massachusetts	Massachusetts	MA				
+Massachusetts-7	25	7	5001500US2507	2507	Massachusetts	Massachusetts	MA				
+Massachusetts-8	25	8	5001500US2508	2508	Massachusetts	Massachusetts	MA				
+Massachusetts-9	25	9	5001500US2509	2509	Massachusetts	Massachusetts	MA				
+Michigan-1	26	1	5001500US2601	2601	Michigan	Michigan	MI				
+Michigan-10	26	10	5001500US2610	2610	Michigan	Michigan	MI				
+Michigan-11	26	11	5001500US2611	2611	Michigan	Michigan	MI				
+Michigan-12	26	12	5001500US2612	2612	Michigan	Michigan	MI				
+Michigan-13	26	13	5001500US2613	2613	Michigan	Michigan	MI				
+Michigan-14	26	14	5001500US2614	2614	Michigan	Michigan	MI				
+Michigan-2	26	2	5001500US2602	2602	Michigan	Michigan	MI				
+Michigan-3	26	3	5001500US2603	2603	Michigan	Michigan	MI				
+Michigan-4	26	4	5001500US2604	2604	Michigan	Michigan	MI				
+Michigan-5	26	5	5001500US2605	2605	Michigan	Michigan	MI				
+Michigan-6	26	6	5001500US2606	2606	Michigan	Michigan	MI				
+Michigan-7	26	7	5001500US2607	2607	Michigan	Michigan	MI				
+Michigan-8	26	8	5001500US2608	2608	Michigan	Michigan	MI				
+Michigan-9	26	9	5001500US2609	2609	Michigan	Michigan	MI				
+Minnesota-1	27	1	5001500US2701	2701	Minnesota	Minnesota	MN				
+Minnesota-2	27	2	5001500US2702	2702	Minnesota	Minnesota	MN				
+Minnesota-3	27	3	5001500US2703	2703	Minnesota	Minnesota	MN				
+Minnesota-4	27	4	5001500US2704	2704	Minnesota	Minnesota	MN				
+Minnesota-5	27	5	5001500US2705	2705	Minnesota	Minnesota	MN				
+Minnesota-6	27	6	5001500US2706	2706	Minnesota	Minnesota	MN				
+Minnesota-7	27	7	5001500US2707	2707	Minnesota	Minnesota	MN				
+Minnesota-8	27	8	5001500US2708	2708	Minnesota	Minnesota	MN				
+Mississippi-1	28	1	5001500US2801	2801	Mississippi	Mississippi	MS				
+Mississippi-2	28	2	5001500US2802	2802	Mississippi	Mississippi	MS				
+Mississippi-3	28	3	5001500US2803	2803	Mississippi	Mississippi	MS				
+Mississippi-4	28	4	5001500US2804	2804	Mississippi	Mississippi	MS				
+Missouri-1	29	1	5001500US2901	2901	Missouri	Missouri	MO				
+Missouri-2	29	2	5001500US2902	2902	Missouri	Missouri	MO				
+Missouri-3	29	3	5001500US2903	2903	Missouri	Missouri	MO				
+Missouri-4	29	4	5001500US2904	2904	Missouri	Missouri	MO				
+Missouri-5	29	5	5001500US2905	2905	Missouri	Missouri	MO				
+Missouri-6	29	6	5001500US2906	2906	Missouri	Missouri	MO				
+Missouri-7	29	7	5001500US2907	2907	Missouri	Missouri	MO				
+Missouri-8	29	8	5001500US2908	2908	Missouri	Missouri	MO				
+Montana-0	30	0	5001500US3000	3000	Montana	Montana	MT				
+Nebraska-1	31	1	5001500US3101	3101	Nebraska	Nebraska	NE				
+Nebraska-2	31	2	5001500US3102	3102	Nebraska	Nebraska	NE				
+Nebraska-3	31	3	5001500US3103	3103	Nebraska	Nebraska	NE				
+Nevada-1	32	1	5001500US3201	3201	Nevada	Nevada	NV				
+Nevada-2	32	2	5001500US3202	3202	Nevada	Nevada	NV				
+Nevada-3	32	3	5001500US3203	3203	Nevada	Nevada	NV				
+Nevada-4	32	4	5001500US3204	3204	Nevada	Nevada	NV				
+New Hampshire-1	33	1	5001500US3301	3301	New Hampshire	New Hampshire	NH				
+New Hampshire-2	33	2	5001500US3302	3302	New Hampshire	New Hampshire	NH				
+New Jersey-1	34	1	5001500US3401	3401	New Jersey	New Jersey	NJ				
+New Jersey-10	34	10	5001500US3410	3410	New Jersey	New Jersey	NJ				
+New Jersey-11	34	11	5001500US3411	3411	New Jersey	New Jersey	NJ				
+New Jersey-12	34	12	5001500US3412	3412	New Jersey	New Jersey	NJ				
+New Jersey-2	34	2	5001500US3402	3402	New Jersey	New Jersey	NJ				
+New Jersey-3	34	3	5001500US3403	3403	New Jersey	New Jersey	NJ				
+New Jersey-4	34	4	5001500US3404	3404	New Jersey	New Jersey	NJ				
+New Jersey-5	34	5	5001500US3405	3405	New Jersey	New Jersey	NJ				
+New Jersey-6	34	6	5001500US3406	3406	New Jersey	New Jersey	NJ				
+New Jersey-7	34	7	5001500US3407	3407	New Jersey	New Jersey	NJ				
+New Jersey-8	34	8	5001500US3408	3408	New Jersey	New Jersey	NJ				
+New Jersey-9	34	9	5001500US3409	3409	New Jersey	New Jersey	NJ				
+New Mexico-1	35	1	5001500US3501	3501	New Mexico	Nouveau Mexique	NM				
+New Mexico-2	35	2	5001500US3502	3502	New Mexico	Nouveau Mexique	NM				
+New Mexico-3	35	3	5001500US3503	3503	New Mexico	Nouveau Mexique	NM				
+New York-1	36	1	5001500US3601	3601	New York	New York	NY				
+New York-10	36	10	5001500US3610	3610	New York	New York	NY				
+New York-11	36	11	5001500US3611	3611	New York	New York	NY				
+New York-12	36	12	5001500US3612	3612	New York	New York	NY				
+New York-13	36	13	5001500US3613	3613	New York	New York	NY				
+New York-14	36	14	5001500US3614	3614	New York	New York	NY				
+New York-15	36	15	5001500US3615	3615	New York	New York	NY				
+New York-16	36	16	5001500US3616	3616	New York	New York	NY				
+New York-17	36	17	5001500US3617	3617	New York	New York	NY				
+New York-18	36	18	5001500US3618	3618	New York	New York	NY				
+New York-19	36	19	5001500US3619	3619	New York	New York	NY				
+New York-2	36	2	5001500US3602	3602	New York	New York	NY				
+New York-20	36	20	5001500US3620	3620	New York	New York	NY				
+New York-21	36	21	5001500US3621	3621	New York	New York	NY				
+New York-22	36	22	5001500US3622	3622	New York	New York	NY				
+New York-23	36	23	5001500US3623	3623	New York	New York	NY				
+New York-24	36	24	5001500US3624	3624	New York	New York	NY				
+New York-25	36	25	5001500US3625	3625	New York	New York	NY				
+New York-26	36	26	5001500US3626	3626	New York	New York	NY				
+New York-27	36	27	5001500US3627	3627	New York	New York	NY				
+New York-3	36	3	5001500US3603	3603	New York	New York	NY				
+New York-4	36	4	5001500US3604	3604	New York	New York	NY				
+New York-5	36	5	5001500US3605	3605	New York	New York	NY				
+New York-6	36	6	5001500US3606	3606	New York	New York	NY				
+New York-7	36	7	5001500US3607	3607	New York	New York	NY				
+New York-8	36	8	5001500US3608	3608	New York	New York	NY				
+New York-9	36	9	5001500US3609	3609	New York	New York	NY				
+North Carolina-1	37	1	5001500US3701	3701	North Carolina	Caroline du Nord	NC				
+North Carolina-10	37	10	5001500US3710	3710	North Carolina	Caroline du Nord	NC				
+North Carolina-11	37	11	5001500US3711	3711	North Carolina	Caroline du Nord	NC				
+North Carolina-12	37	12	5001500US3712	3712	North Carolina	Caroline du Nord	NC				
+North Carolina-13	37	13	5001500US3713	3713	North Carolina	Caroline du Nord	NC				
+North Carolina-2	37	2	5001500US3702	3702	North Carolina	Caroline du Nord	NC				
+North Carolina-3	37	3	5001500US3703	3703	North Carolina	Caroline du Nord	NC				
+North Carolina-4	37	4	5001500US3704	3704	North Carolina	Caroline du Nord	NC				
+North Carolina-5	37	5	5001500US3705	3705	North Carolina	Caroline du Nord	NC				
+North Carolina-6	37	6	5001500US3706	3706	North Carolina	Caroline du Nord	NC				
+North Carolina-7	37	7	5001500US3707	3707	North Carolina	Caroline du Nord	NC				
+North Carolina-8	37	8	5001500US3708	3708	North Carolina	Caroline du Nord	NC				
+North Carolina-9	37	9	5001500US3709	3709	North Carolina	Caroline du Nord	NC				
+North Dakota-0	38	0	5001500US3800	3800	North Dakota	Dakota du nord	ND				
+Ohio-1	39	1	5001500US3901	3901	Ohio	Ohio	OH				
+Ohio-10	39	10	5001500US3910	3910	Ohio	Ohio	OH				
+Ohio-11	39	11	5001500US3911	3911	Ohio	Ohio	OH				
+Ohio-12	39	12	5001500US3912	3912	Ohio	Ohio	OH				
+Ohio-13	39	13	5001500US3913	3913	Ohio	Ohio	OH				
+Ohio-14	39	14	5001500US3914	3914	Ohio	Ohio	OH				
+Ohio-15	39	15	5001500US3915	3915	Ohio	Ohio	OH				
+Ohio-16	39	16	5001500US3916	3916	Ohio	Ohio	OH				
+Ohio-2	39	2	5001500US3902	3902	Ohio	Ohio	OH				
+Ohio-3	39	3	5001500US3903	3903	Ohio	Ohio	OH				
+Ohio-4	39	4	5001500US3904	3904	Ohio	Ohio	OH				
+Ohio-5	39	5	5001500US3905	3905	Ohio	Ohio	OH				
+Ohio-6	39	6	5001500US3906	3906	Ohio	Ohio	OH				
+Ohio-7	39	7	5001500US3907	3907	Ohio	Ohio	OH				
+Ohio-8	39	8	5001500US3908	3908	Ohio	Ohio	OH				
+Ohio-9	39	9	5001500US3909	3909	Ohio	Ohio	OH				
+Oklahoma-1	40	1	5001500US4001	4001	Oklahoma	Oklahoma	OK				
+Oklahoma-2	40	2	5001500US4002	4002	Oklahoma	Oklahoma	OK				
+Oklahoma-3	40	3	5001500US4003	4003	Oklahoma	Oklahoma	OK				
+Oklahoma-4	40	4	5001500US4004	4004	Oklahoma	Oklahoma	OK				
+Oklahoma-5	40	5	5001500US4005	4005	Oklahoma	Oklahoma	OK				
+Oregon-1	41	1	5001500US4101	4101	Oregon	Oregon	OR				
+Oregon-2	41	2	5001500US4102	4102	Oregon	Oregon	OR				
+Oregon-3	41	3	5001500US4103	4103	Oregon	Oregon	OR				
+Oregon-4	41	4	5001500US4104	4104	Oregon	Oregon	OR				
+Oregon-5	41	5	5001500US4105	4105	Oregon	Oregon	OR				
+Pennsylvania-1	42	1	5001500US4201	4201	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-10	42	10	5001500US4210	4210	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-11	42	11	5001500US4211	4211	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-12	42	12	5001500US4212	4212	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-13	42	13	5001500US4213	4213	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-14	42	14	5001500US4214	4214	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-15	42	15	5001500US4215	4215	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-16	42	16	5001500US4216	4216	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-17	42	17	5001500US4217	4217	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-18	42	18	5001500US4218	4218	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-2	42	2	5001500US4202	4202	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-3	42	3	5001500US4203	4203	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-4	42	4	5001500US4204	4204	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-5	42	5	5001500US4205	4205	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-6	42	6	5001500US4206	4206	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-7	42	7	5001500US4207	4207	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-8	42	8	5001500US4208	4208	Pennsylvania	Pennsylvanie	PA				
+Pennsylvania-9	42	9	5001500US4209	4209	Pennsylvania	Pennsylvanie	PA				
+Puerto Rico-98	72	98	5001500US7298	7298	Puerto Rico	Porto Rico	PR				
+Rhode Island-1	44	1	5001500US4401	4401	Rhode Island	Rhode Island	RI				
+Rhode Island-2	44	2	5001500US4402	4402	Rhode Island	Rhode Island	RI				
+South Carolina-1	45	1	5001500US4501	4501	South Carolina	Caroline du Sud	SC				
+South Carolina-2	45	2	5001500US4502	4502	South Carolina	Caroline du Sud	SC				
+South Carolina-3	45	3	5001500US4503	4503	South Carolina	Caroline du Sud	SC				
+South Carolina-4	45	4	5001500US4504	4504	South Carolina	Caroline du Sud	SC				
+South Carolina-5	45	5	5001500US4505	4505	South Carolina	Caroline du Sud	SC				
+South Carolina-6	45	6	5001500US4506	4506	South Carolina	Caroline du Sud	SC				
+South Carolina-7	45	7	5001500US4507	4507	South Carolina	Caroline du Sud	SC				
+South Dakota-0	46	0	5001500US4600	4600	South Dakota	Dakota du Sud	SD				
+Tennessee-1	47	1	5001500US4701	4701	Tennessee	Tennessee	TN				
+Tennessee-2	47	2	5001500US4702	4702	Tennessee	Tennessee	TN				
+Tennessee-3	47	3	5001500US4703	4703	Tennessee	Tennessee	TN				
+Tennessee-4	47	4	5001500US4704	4704	Tennessee	Tennessee	TN				
+Tennessee-5	47	5	5001500US4705	4705	Tennessee	Tennessee	TN				
+Tennessee-6	47	6	5001500US4706	4706	Tennessee	Tennessee	TN				
+Tennessee-7	47	7	5001500US4707	4707	Tennessee	Tennessee	TN				
+Tennessee-8	47	8	5001500US4708	4708	Tennessee	Tennessee	TN				
+Tennessee-9	47	9	5001500US4709	4709	Tennessee	Tennessee	TN				
+Texas-1	48	1	5001500US4801	4801	Texas	Texas	TX				
+Texas-10	48	10	5001500US4810	4810	Texas	Texas	TX				
+Texas-11	48	11	5001500US4811	4811	Texas	Texas	TX				
+Texas-12	48	12	5001500US4812	4812	Texas	Texas	TX				
+Texas-13	48	13	5001500US4813	4813	Texas	Texas	TX				
+Texas-14	48	14	5001500US4814	4814	Texas	Texas	TX				
+Texas-15	48	15	5001500US4815	4815	Texas	Texas	TX				
+Texas-16	48	16	5001500US4816	4816	Texas	Texas	TX				
+Texas-17	48	17	5001500US4817	4817	Texas	Texas	TX				
+Texas-18	48	18	5001500US4818	4818	Texas	Texas	TX				
+Texas-19	48	19	5001500US4819	4819	Texas	Texas	TX				
+Texas-2	48	2	5001500US4802	4802	Texas	Texas	TX				
+Texas-20	48	20	5001500US4820	4820	Texas	Texas	TX				
+Texas-21	48	21	5001500US4821	4821	Texas	Texas	TX				
+Texas-22	48	22	5001500US4822	4822	Texas	Texas	TX				
+Texas-23	48	23	5001500US4823	4823	Texas	Texas	TX				
+Texas-24	48	24	5001500US4824	4824	Texas	Texas	TX				
+Texas-25	48	25	5001500US4825	4825	Texas	Texas	TX				
+Texas-26	48	26	5001500US4826	4826	Texas	Texas	TX				
+Texas-27	48	27	5001500US4827	4827	Texas	Texas	TX				
+Texas-28	48	28	5001500US4828	4828	Texas	Texas	TX				
+Texas-29	48	29	5001500US4829	4829	Texas	Texas	TX				
+Texas-3	48	3	5001500US4803	4803	Texas	Texas	TX				
+Texas-30	48	30	5001500US4830	4830	Texas	Texas	TX				
+Texas-31	48	31	5001500US4831	4831	Texas	Texas	TX				
+Texas-32	48	32	5001500US4832	4832	Texas	Texas	TX				
+Texas-33	48	33	5001500US4833	4833	Texas	Texas	TX				
+Texas-34	48	34	5001500US4834	4834	Texas	Texas	TX				
+Texas-35	48	35	5001500US4835	4835	Texas	Texas	TX				
+Texas-36	48	36	5001500US4836	4836	Texas	Texas	TX				
+Texas-4	48	4	5001500US4804	4804	Texas	Texas	TX				
+Texas-5	48	5	5001500US4805	4805	Texas	Texas	TX				
+Texas-6	48	6	5001500US4806	4806	Texas	Texas	TX				
+Texas-7	48	7	5001500US4807	4807	Texas	Texas	TX				
+Texas-8	48	8	5001500US4808	4808	Texas	Texas	TX				
+Texas-9	48	9	5001500US4809	4809	Texas	Texas	TX				
+Utah-1	49	1	5001500US4901	4901	Utah	Utah	UT				
+Utah-2	49	2	5001500US4902	4902	Utah	Utah	UT				
+Utah-3	49	3	5001500US4903	4903	Utah	Utah	UT				
+Utah-4	49	4	5001500US4904	4904	Utah	Utah	UT				
+Vermont-0	50	0	5001500US5000	5000	Vermont	Vermont	VT				
+Virginia-1	51	1	5001500US5101	5101	Virginia	Virginie	VA				
+Virginia-10	51	10	5001500US5110	5110	Virginia	Virginie	VA				
+Virginia-11	51	11	5001500US5111	5111	Virginia	Virginie	VA				
+Virginia-2	51	2	5001500US5102	5102	Virginia	Virginie	VA				
+Virginia-3	51	3	5001500US5103	5103	Virginia	Virginie	VA				
+Virginia-4	51	4	5001500US5104	5104	Virginia	Virginie	VA				
+Virginia-5	51	5	5001500US5105	5105	Virginia	Virginie	VA				
+Virginia-6	51	6	5001500US5106	5106	Virginia	Virginie	VA				
+Virginia-7	51	7	5001500US5107	5107	Virginia	Virginie	VA				
+Virginia-8	51	8	5001500US5108	5108	Virginia	Virginie	VA				
+Virginia-9	51	9	5001500US5109	5109	Virginia	Virginie	VA				
+Washington-1	53	1	5001500US5301	5301	Washington	Washington	WA				
+Washington-10	53	10	5001500US5310	5310	Washington	Washington	WA				
+Washington-2	53	2	5001500US5302	5302	Washington	Washington	WA				
+Washington-3	53	3	5001500US5303	5303	Washington	Washington	WA				
+Washington-4	53	4	5001500US5304	5304	Washington	Washington	WA				
+Washington-5	53	5	5001500US5305	5305	Washington	Washington	WA				
+Washington-6	53	6	5001500US5306	5306	Washington	Washington	WA				
+Washington-7	53	7	5001500US5307	5307	Washington	Washington	WA				
+Washington-8	53	8	5001500US5308	5308	Washington	Washington	WA				
+Washington-9	53	9	5001500US5309	5309	Washington	Washington	WA				
+West Virginia-1	54	1	5001500US5401	5401	West Virginia	Virginie-Occidentale	WV				
+West Virginia-2	54	2	5001500US5402	5402	West Virginia	Virginie-Occidentale	WV				
+West Virginia-3	54	3	5001500US5403	5403	West Virginia	Virginie-Occidentale	WV				
+Wisconsin-1	55	1	5001500US5501	5501	Wisconsin	Wisconsin	WI				
+Wisconsin-2	55	2	5001500US5502	5502	Wisconsin	Wisconsin	WI				
+Wisconsin-3	55	3	5001500US5503	5503	Wisconsin	Wisconsin	WI				
+Wisconsin-4	55	4	5001500US5504	5504	Wisconsin	Wisconsin	WI				
+Wisconsin-5	55	5	5001500US5505	5505	Wisconsin	Wisconsin	WI				
+Wisconsin-6	55	6	5001500US5506	5506	Wisconsin	Wisconsin	WI				
+Wisconsin-7	55	7	5001500US5507	5507	Wisconsin	Wisconsin	WI				
+Wisconsin-8	55	8	5001500US5508	5508	Wisconsin	Wisconsin	WI				
+Wyoming-0	56	0	5001500US5600	5600	Wyoming	Wyoming	WY				
