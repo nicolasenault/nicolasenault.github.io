@@ -121,7 +121,7 @@ stroke-width:0.5px;
 	var color = d3.scale.linear()
 			  .range(["#73b5ea","#1f76bd","#e49292","#c54646","#e2e2e2"]);
 
-	d3.csv("https://nicolasenault.github.io/districts_results_clea.csv", function(err, data) {
+	d3.csv("https://nicolasenault.github.io/districts_results_clean_3.csv", function(err, data) {
 	
 		color.domain([0,1,2,3,4]);
 		
@@ -174,6 +174,9 @@ stroke-width:0.5px;
 			var dataElu = data[i].elu;
 			var dataState = data[i].fr;
 			var dataCirco = data[i].cd115fp;
+			var dataDem = data[i].percent_dem;
+			var dataRep = data[i].percent_rep;
+			var dataName = data[i].name;
 			
 			// Find the corresponding state inside the GeoJSON
 			for (var j = 0; j < congress.objects.districts.geometries.length; j++)  {
@@ -185,6 +188,9 @@ stroke-width:0.5px;
 				congress.objects.districts.geometries[j].properties.elu = dataElu; 
 				congress.objects.districts.geometries[j].properties.fr = dataState; 
 				congress.objects.districts.geometries[j].properties.cd115fp = dataCirco; 
+				congress.objects.districts.geometries[j].properties.percent_dem = dataDem; 
+				congress.objects.districts.geometries[j].properties.percent_rep = dataRep; 
+				congress.objects.districts.geometries[j].properties.name = dataName; 
 				// Stop looking through the JSON
 				break;
 				}
@@ -203,9 +209,13 @@ stroke-width:0.5px;
 			.style("fill", function(d) {
 				var value = d.properties.elu;
 					if (value=='D') {
-					return "#1a80c4";
+					return "#73b5ea";
+					} else if (value=='DD') {
+					return "#1f76bd";
 					} else if (value=='R') {
-					return "#cc3d3d";
+					return "#e49292";
+					} else if (value=='RR') {
+					return "#c54646";
 					}else {
 				//If value is undefined…
 				return "#e2e2e2";
@@ -215,11 +225,20 @@ stroke-width:0.5px;
 			.on("mousemove", function(d) {
 				var html = "";
 				html += "<div class=\"tooltip_kv\">";
-				html += "<span class=\"tooltip_key\">";
+				html += "<b><span class=\"tooltip_key\">";
 				html += d.properties.fr;
 				html += "</span>";
 				html += "<span class=\"tooltip_key\"> - District n°";
 				html += d.properties.cd115fp;
+				html += "</span></b><br/><br/>";
+				html += "<span class=\"tooltip_key\">Démocrates : ";
+				html += d.properties.percent_dem;
+				html += "%</span><br/>";
+				html += "<span class=\"tooltip_key\">Républicains : ";
+				html += d.properties.percent_rep;
+				html += "%</span<br/><br/><br/>";
+				html += "<span class=\"tooltip_key\">Elu(e) : ";
+				html += d.properties.name;
 				html += "</span>";
 				html += "</div>";
 						
@@ -229,7 +248,7 @@ stroke-width:0.5px;
 						
 				var tooltip_width2 = $("#tooltip-container").width();
 				d3.select("#tooltip-container")
-				.style("top", (d3.event.layerY - 50) + "px")
+				.style("top", (d3.event.layerY - 150) + "px")
 				.style("left", (d3.event.layerX - tooltip_width2 / 2) + "px");
 			})
 			
