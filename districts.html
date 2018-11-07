@@ -237,9 +237,9 @@ stroke-width:0.5px;
 				<!-- html += "<span class=\"tooltip_key\">Républicains : "; -->
 				<!-- html += d.properties.percent_rep; -->
 				<!-- html += "%</span<br/><br/><br/>"; -->
-				html += "<span class=\"tooltip_key\">Elu(e) : ";
-				html += d.properties.name;
-				html += "</span>";
+				<!-- html += "<span class=\"tooltip_key\">Elu(e) : "; -->
+				<!-- html += d.properties.name; -->
+				<!-- html += "</span>"; -->
 				html += "</div>";
 						
 				$(this).attr("fill-opacity", "0.8");
@@ -248,7 +248,7 @@ stroke-width:0.5px;
 						
 				var tooltip_width2 = $("#tooltip-container").width();
 				d3.select("#tooltip-container")
-				.style("top", (d3.event.layerY - 100) + "px")
+				.style("top", (d3.event.layerY - 50) + "px")
 				.style("left", (d3.event.layerX - tooltip_width2 / 2) + "px");
 			})
 			
