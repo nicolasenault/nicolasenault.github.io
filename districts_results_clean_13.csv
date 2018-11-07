@@ -231,7 +231,7 @@ statefp,cd115fp,affgeoid,id,state,fr,abr,NYT,elu,name,percent_dem,percent_rep
 29,6,5001500US2906,2906,Missouri,Missouri,MO,Mo. 6,R,,,
 29,7,5001500US2907,2907,Missouri,Missouri,MO,Mo. 7,R,,,
 29,8,5001500US2908,2908,Missouri,Missouri,MO,Mo. 8,R,,,
-30,0,5001500US3000,3000,Montana,Montana,MT,Mont.,,,,
+30,0,5001500US3000,3000,Montana,Montana,MT,Mont.,R,,,
 37,1,5001500US3701,3701,North Carolina,Caroline du Nord,NC,N.C. 1,D,,,
 37,10,5001500US3710,3710,North Carolina,Caroline du Nord,NC,N.C. 10,R,,,
 37,11,5001500US3711,3711,North Carolina,Caroline du Nord,NC,N.C. 11,R,,,
