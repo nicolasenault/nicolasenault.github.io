@@ -261,7 +261,7 @@ statefp,cd115fp,affgeoid,id,state,fr,abr,NYT,elu,name,percent_dem,percent_rep
 34,8,5001500US3408,3408,New Jersey,New Jersey,NJ,N.J. 8,D,,,
 34,9,5001500US3409,3409,New Jersey,New Jersey,NJ,N.J. 9,D,,,
 35,1,5001500US3501,3501,New Mexico,Nouveau Mexique,NM,N.M. 1,D,,,
-35,2,5001500US3502,3502,New Mexico,Nouveau Mexique,NM,N.M. 2,,,,
+35,2,5001500US3502,3502,New Mexico,Nouveau Mexique,NM,N.M. 2,DD,,,
 35,3,5001500US3503,3503,New Mexico,Nouveau Mexique,NM,N.M. 3,D,,,
 36,1,5001500US3601,3601,New York,New York,NY,N.Y. 1,R,,,
 36,10,5001500US3610,3610,New York,New York,NY,N.Y. 10,D,,,
