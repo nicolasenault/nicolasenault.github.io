@@ -7,7 +7,7 @@ statefp,cd115fp,affgeoid,id,state,fr,abr,NYT,elu,name,percent_dem,percent_rep
 1,6,5001500US0106,0106,Alabama,Alabama,AL,Ala. 6,R,,,
 1,7,5001500US0107,0107,Alabama,Alabama,AL,Ala. 7,D,,,
 2,0,5001500US0200,0200,Alaska,Alaska,AK,Alaska,R,,,
-4,1,5001500US0401,0401,Arizona,Arizona,AZ,Ariz. 1,,,,
+4,1,5001500US0401,0401,Arizona,Arizona,AZ,Ariz. 1,D,,,
 4,2,5001500US0402,0402,Arizona,Arizona,AZ,Ariz. 2,DD,,,
 4,3,5001500US0403,0403,Arizona,Arizona,AZ,Ariz. 3,D,,,
 4,4,5001500US0404,0404,Arizona,Arizona,AZ,Ariz. 4,R,,,
