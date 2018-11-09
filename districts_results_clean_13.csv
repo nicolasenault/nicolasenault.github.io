@@ -211,7 +211,7 @@ statefp,cd115fp,affgeoid,id,state,fr,abr,NYT,elu,name,percent_dem,percent_rep
 26,7,5001500US2607,2607,Michigan,Michigan,MI,Mich. 7,R,,,
 26,8,5001500US2608,2608,Michigan,Michigan,MI,Mich. 8,DD,,,
 26,9,5001500US2609,2609,Michigan,Michigan,MI,Mich. 9,D,,,
-27,1,5001500US2701,2701,Minnesota,Minnesota,MN,Minn. 1,,,,
+27,1,5001500US2701,2701,Minnesota,Minnesota,MN,Minn. 1,RR,,,
 27,2,5001500US2702,2702,Minnesota,Minnesota,MN,Minn. 2,D,,,
 27,3,5001500US2703,2703,Minnesota,Minnesota,MN,Minn. 3,D,,,
 27,4,5001500US2704,2704,Minnesota,Minnesota,MN,Minn. 4,D,,,
