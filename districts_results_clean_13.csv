@@ -423,7 +423,7 @@ statefp,cd115fp,affgeoid,id,state,fr,abr,NYT,elu,name,percent_dem,percent_rep
 53,5,5001500US5305,5305,Washington,Washington,WA,Wash. 5,R,,,
 53,6,5001500US5306,5306,Washington,Washington,WA,Wash. 6,D,,,
 53,7,5001500US5307,5307,Washington,Washington,WA,Wash. 7,D,,,
-53,8,5001500US5308,5308,Washington,Washington,WA,Wash. 8,,,,
+53,8,5001500US5308,5308,Washington,Washington,WA,Wash. 8,DD,,,
 53,9,5001500US5309,5309,Washington,Washington,WA,Wash. 9,D,,,
 55,1,5001500US5501,5501,Wisconsin,Wisconsin,WI,Wis. 1,R,,,
 55,2,5001500US5502,5502,Wisconsin,Wisconsin,WI,Wis. 2,D,,,
