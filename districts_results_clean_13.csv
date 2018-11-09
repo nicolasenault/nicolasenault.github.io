@@ -375,7 +375,7 @@ statefp,cd115fp,affgeoid,id,state,fr,abr,NYT,elu,name,percent_dem,percent_rep
 48,20,5001500US4820,4820,Texas,Texas,TX,Tex. 20,D,,,
 48,21,5001500US4821,4821,Texas,Texas,TX,Tex. 21,R,,,
 48,22,5001500US4822,4822,Texas,Texas,TX,Tex. 22,R,,,
-48,23,5001500US4823,4823,Texas,Texas,TX,Tex. 23,R,,,
+48,23,5001500US4823,4823,Texas,Texas,TX,Tex. 23,,,,
 48,24,5001500US4824,4824,Texas,Texas,TX,Tex. 24,R,,,
 48,25,5001500US4825,4825,Texas,Texas,TX,Tex. 25,R,,,
 48,26,5001500US4826,4826,Texas,Texas,TX,Tex. 26,R,,,
