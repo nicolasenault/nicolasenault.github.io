@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Moteur de recherche des podcast</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="style.css">  
+</head>
+
+<body>
+
+
+
+<div id="myBtnContainer">
+	<button class="btn active" id="all" onclick="filterSelection('all')"> tous les podcasts</button>
+	<button class="btn" id="actu" onclick="filterSelection('actu')"> actu</button>
+	<button class="btn" id="societe" onclick="filterSelection('societe')"> société</button>
+	<button class="btn" id="culture" onclick="filterSelection('culture')"> culture</button>
+	<button class="btn" id="geek" onclick="filterSelection('geek')"> geek</button>
+	<button class="btn" id="lifestyle" onclick="filterSelection('lifestyle')"> lifestyle</button>
+</div>
+<div class="checkos">
+	<span class="pluto">plutôt court</span>
+	<label class="switch">
+		<input type="checkbox" class="short" id="corto" name="court" checked onchange="checkSlide(this)">
+		<span class="slider round"></span>
+	</label>
+	<span class="pluto">plutôt long</span>
+	<label class="switch">
+		<input type="checkbox" id="longo" name="long" checked onchange="checkSlide(this)">
+		<span class="slider round"></span>
+	</label>
+</div>
+
+<div class="container">
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/2_heures_de_perdues.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="http://www.2hdp.fr/" target="_blank">2 heures de perdues</a></h1>
+				<p class="description">Pourquoi gagner du temps quand on peut en perdre devant de mauvais films ? "2 heures de perdues", c'est une bande de copains qui regardent chaque semaine des films de l'enfer pour vous faire marrer ou vous occuper.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Ce podcast permet d'avoir un point de vue différent sur des films pas toujours populaires. (Vincent Winter)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/a_derouler.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/a-derouler/" target="_blank">A dérouler</a></h1>
+				<p class="description">Une histoire ou un coup de gueule tiré d'un thread de Twitter.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Format parfait, avec des sujets hyper éclectiques. On apprend des choses, on s'émeut, on s'énerve, en tout cas on ne reste pas indifférent-e. L'intonation de Juliette et le montage très nerveux en font un podcast savoureux. (Nora Bouazzouni)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 2 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 3 fois par semaine</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/au_cœur_du_crime.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="https://www.nouvelobs.com/justice/20180712.OBS9599/au-c-ur-du-crime-l-obs-lance-sa-premiere-serie-de-podcasts.html" target="_blank">Au cœur du crime</a></h1>
+				<p class="description">Guy Georges, Grégory, le baron Empain... "L'Obs" revient sur les grandes affaires judiciaires de ces quarante dernières années en donnant la parole à ceux qui en ont été les protagonistes.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Un bon moyen de plonger dans les crimes les plus célèbres de France. Intervenants de qualité. (Robin Prudent)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 25 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 10 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/bcbt_le_podcast.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="http://bcbtlepodcast.lepodcast.fr/" target="_blank">BCBT le podcast</a></h1>
+				<p class="description">Par des conseils, des témoignages, des avis d'expertes, "BCBT le podcast" aide les femmes à se détacher de l'obsession de la minceur et à vivre en paix avec leur corps, quelle que soit leur silhouette.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Un peu artisanal dans la réalisation mais invité(e)s de qualité (comme Mona Chollet) pour parler du rapport au corps et à l'alimentation. (Catherine Fournier)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 10 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>	
+	<div class="filterDiv culture court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/beatmakers.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="https://www.arteradio.com/serie/beatmakers" target="_blank">Beatmakers</a></h1>
+				<p class="description">Dix producteurs français sortent de l'ombre et racontent le "making of" de leurs plus grands tubes.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Assez cool de découvrir comment ont été composés certains morceaux devenus des classiques, notamment de rap avec "numéro 10" de Booba ou "Thé à la menthe" de la Caution. L'histoire derrière "Sapés comme jamais" est étonnante. (Kocila)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 25 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 10 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/bons_plants.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/bons-plants/" target="_blank">Bons plants</a></h1>
+				<p class="description">Podcast sur l’agriculture en ville et le renouveau végétal urbain, à la rencontre des acteurs de la conquête végétale de la ville.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Cultiver en ville, c'est facile ! Si si, promis. Ecoutez les super conseils et idées de "Bons plants" et vous en serez convaincu. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 25 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/chiffon.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://soundcloud.com/user-869312677" target="_blank">Chiffon</a></h1>
+				<p class="description">Podcast indépendant qui analyse notre rapport à la mode et aux fringues. La journaliste interviewe des femmes et des hommes, connus ou inconnus, venant de milieux, de villes et de pays différents. On y parle avec un ton libre, pertinent et décalé.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Si les discussions pointues sur la mode vous effraient, "Chiffon" est pour vous. Ton et sujet rafraîchissants. On est loin de la production léchée, mais c'est ce qui fait son charme. (Julie Rasplus)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 30 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/crackopolis.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://www.arteradio.com/serie/crackopolis" target="_blank">Crackopolis</a></h1>
+				<p class="description">Charles, 30 ans, est fumeur de crack. En 15 brefs récits éclairés, il nous apprend comment voler, dormir et survivre à Crackopolis. Quinze balades dans une ville parallèle sombre et violente, parfois terriblement drôle, toute proche et pourtant inconnue.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Captivant, enivrant et glaçant. Le personnage est unique, jamais dans la plainte, ni dans le fantasme. (Pierre-Louis Caron)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 5 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 15 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/entre.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://louiemedia.com/entre/" target="_blank">Entre</a></h1>
+				<p class="description">Justine a 11 ans et entre en sixième. Dans ce podcast, elle raconte sa sortie de l'enfance, des doudous aux blagues de youtubeurs, de sa peur du noir à ses rêves d'après bac.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Au fil d'épisodes courts et souvent touchants, Justine, préado "intello" et pleine d'humour, raconte la violence du collège, ses relations avec ses parents, son rapport à la religion ou encore son rêve d'étudier à Harvard, avec un recul étonnant pour ses 11 ans. (Jalila Zaoug)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 10 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/generation_xx.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://www.generationxx.fr/les-invitees-du-podcast/" target="_blank">Génération XX</a></h1>
+				<p class="description">Des conversations avec des femmes qui entreprennent, à des âges et dans des milieux différents. Elles ont en commun d’être passionnées, créatives, imparfaites, inspirées et inspirantes.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Chaque rencontre donne un bon coup de motivation pour se lancer dans des projets farfelus. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 40 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/lagenda_du_loisir_francais.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="http://www.slate.fr/podcasts/" target="_blank">L'Agenda du loisir français</a></h1>
+				<p class="description">Henry Michel part à la recherche des événements les plus drôles, farfelus, bizarres de France toutes les semaines... Il scrute les forums et réseaux sociaux pour rechercher les échanges les plus désopilants. C'est super drôle, ça fait rire dans le métro. (Elise Lambert)</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Ce podcast permet d'avoir un point de vue différent sur des films pas toujours populaires. (Vincent Winter)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 15 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/la_bonne_graine.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/la-bonne-graine/" target="_blank">La Bonne Graine</a></h1>
+				<p class="description">Ils parlent de chimie moléculaire, de cosmologie, de droit ou encore de musicologie. Ce podcast vous propose une série d’histoires vraies et de parcours d’apprentissage.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Cette fois-ci, pas d'interviews fleuves. "La Bonne Graine", c'est court et ça raconte le parcours d'étudiants passionnés. Ils vous donneraient presque envie de vous (re)lancer dans les études... (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 10 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 24 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/la_cartouche.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="https://www.blueprint.pm/podcasts/la-cartouche/" target="_blank">La Cartouche</a></h1>
+				<p class="description">Un vendredi sur deux, Loup Lassinat-Foubert et Yann Rieder reviennent sur l'actu des jeux vidéo.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Revue d'actualité, tests, dossiers complets... Ce qui se rapproche le plus d'un magazine spécialisé jeux vidéo, mais en version audio si vous estimez que la lecture, c'est surcoté. (Vincent Matalon)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1h30</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/la_poudre.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société, Culture</div>
+				<h1 class="title"><a href="http://www.nouvellesecoutes.fr/la-poudre/" target="_blank">La Poudre</a></h1>
+				<p class="description">Interviews de femmes engagées, chanteuses, autrices, réalisatrices, dessinatrices, politiques, menées par Lauren Bastide, ex-rédactrice en chef à "Elle". </p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> "La Poudre" est un podcast féministe où vous n'entendrez que des femmes parler de leur vie. Elles ne sont pas toutes connues du grand public, mais ont des choses à raconter sur leur corps, la société, leur travail, leur histoire. Seul bémol : la proximité que Lauren Bastide affiche parfois, et l'absence de contradiction qui va avec. (Julie Rasplus)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/le_casque_et_lenclume.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="https://soundcloud.com/lecasqueetlenclume" target="_blank">Le Casque et l'Enclume</a></h1>
+				<p class="description">Une joyeuse bande de critiques passe en revue les dernières productions jeux vidéo et pop culture en toute sincérité et subjectivité.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Des critiques courtes mais efficaces sur les jeux du moment avec des intervenants aux profils différents. Ça évite les digressions d'experts barbantes. (Jérôme Comin)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 15 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/le_gaufrier.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="http://legaufrierpodcast.fr/" target="_blank">Le Gaufrier</a></h1>
+				<p class="description">"Le Gaufrier", c’est le podcast consacré à la bande dessinée.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Trois libraires débattent des sorties du moment et n'hésitent pas à mettre les pieds dans le plat quand la qualité n'est pas au rendez-vous. C'est sympa, très instructif et sans langue de bois. (Pierre Godon)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 30 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>	
+	<div class="filterDiv societe culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/le_tchip.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société, Culture</div>
+				<h1 class="title"><a href="https://www.arteradio.com/emission/le_tchip" target="_blank">Le Tchip</a></h1>
+				<p class="description">Un podcast où trois trentenaires sympas d'origine antillaise et africaine partagent leur expérience noire. Un regard afropop sur la culture et le quotidien.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Très bon podcast sur les cultures noires et les luttes antiracistes et décoloniales. Un peu trop concentré sur les Etats-Unis cependant. (Elise Lambert)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/les_baladeurs.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://www.lesothers.com/les-baladeurs-podcast-aventure/" target="_blank">Les Baladeurs</a></h1>
+				<p class="description">Si vous êtes parcouru par le frisson de l’ailleurs, le goût de l’aventure et la soif de découverte, ce podcast est fait pour vous. Y sont rassemblés des récits en pleine nature que l’on conte d’ordinaire au coin du feu.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Voyager depuis votre siège, ça vous tente ? Les aventuriers de l'extrême qui interviennent dans "Les Baladeurs" vous transportent aux quatre coins du monde. Leurs récits sont incroyables, enrichissants et honnêtes, le tout avec un fond sonore travaillé. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 30 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/les_braqueurs.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="https://www.arteradio.com/serie/les_braqueurs" target="_blank">Les Braqueurs</a></h1>
+				<p class="description">Trois grands braqueurs racontent leur dangereux métier.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Les récits des deux premiers interlocuteurs sont hallucinants. Les scènes qu'ils décrivent dignes des plus grands films de gangsters. (Kocila Makdeche)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 15 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 11 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/les_couilles_sur_la_table.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/les-couilles-sur-la-table/" target="_blank">Les Couilles sur la table</a></h1>
+				<p class="description">Un podcast destiné aux femmes et aux hommes qui se posent des questions sur eux-mêmes.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Qui sont les violeurs ? Pourquoi la voiture est-elle un symbole de virilité ? La contraception masculine, c'est pour quand ? Ce podcast féministe et passionnant décortique la construction des masculinités. Chaque épisode aborde un thème avec l'éclairage de sociologues, d'historien(ne)s, de géographes… toujours de manière accessible. Un point de vue original sur les questions de genre. (Jalila Zaoug)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 35 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/les_demons_du_midi.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="https://www.geekzone.fr/lddm/" target="_blank">Les Démons du MIDI</a></h1>
+				<p class="description">Les deux journalistes retroussent leurs manches et fouillent dans leurs malles à bandes-son pour en sortir les pépites jeux vidéo chères à leur cœur.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Journalistes spécialisés dans le jeu vidéo, Gautoz et Pipomantis concoctent chaque mois une playlist de musiques de jeux autour de thématiques pointues (les robots, la famille, l'histoire...) : les antiquités côtoient les dernières nouveautés, et sont à chaque fois accompagnées de chouettes infos sur les compositeurs. (Vincent Matalon)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 2 heures</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/les_interviews_enfantins_de_monsieur_barbarin.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://lepostegeneral.fr/onair/listen/id/936/program/11" target="_blank">Les Interviews enfantins de Monsieur Barbarin</a></h1>
+				<p class="description">"Les Interviews enfantins" laissent la parole aux moins de 10 ans. Aspirations, pensées, hobbies : on entend tout ce qui leur passe par la tête.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> "Tu fais quoi dans la vie ? - Je rêve." On aime écouter leurs petites voix et s'étonner devant leurs réflexions profondes. Les enfants sont les invités principaux de ce podcast, à écouter pour un moment doux. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 5 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/les_petits_revenants.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="https://www.boxsons.fr/rubrique/les-petits-revenants" target="_blank">Les Petits Revenants</a></h1>
+				<p class="description">"Les Petits Revenants", c’est une enquête (en partie payante) de plusieurs mois, mais ce sont avant tout des histoires. Celle d’Ivan, à Nice, celle d’Abdelhakim, dans la région lyonnaise, et celle de leurs enfants et petits-enfants nés en France et emmenés en Syrie par leurs parents partis rejoindre Daech.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Une série qui permet de mieux comprendre le parcours des personnes qui partent en Syrie, à travers le récit de familles, de proches. Eclairant ! (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 15 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 3 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/lettres_damour.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="https://www.boxsons.fr/rubrique/lettres-damour/" target="_blank">Lettres d'amour</a></h1>
+				<p class="description">Le plastique, le ballon rond, le pollen... Chaque semaine, une nouvelle lettre à quelqu'un ou quelque chose qui habite notre quotidien, qu'on le veuille ou non, et qui fait parler dans l'actualité.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> C'est court, l'univers sonore est élaboré et ça donne à réfléchir sur des petites choses omniprésentes du quotidien. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 5 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/make_it_deep.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="https://makeitdeep.fr/" target="_blank">Make It Deep</a></h1>
+				<p class="description">Ce podcast questionne les musiques électroniques, dans leur aspect sonore mais également sociologique, économique, urbanistique…</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Podcast précis et pertinent. Des invités toujours bien choisis, et le sujet reste toujours bien centré. Entrecoupé d'un brin de bonne musique. (Batiste Poulin)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/mangacast_omake.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek, Culture</div>
+				<h1 class="title"><a href="http://www.mangacast.fr/" target="_blank">Mangacast Omake</a></h1>
+				<p class="description">Une table ronde où l'on discute chaque mois d'une douzaine de titres de mangas sortis récemment.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> C'est un peu trop long, les chroniqueurs un peu trop amateurs, mais "Mangacast Omake" a le mérite de faire un tour d'horizon régulier de l'actualité des sorties manga. Parfait pour avoir une opinion sur une douzaine de titres chroniqués chaque mois, auxquels il faut ajouter quelques animés. (Elodie Drouard)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1h30</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/marvel_la_fabrique_des_super-heros.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="https://www.franceinter.fr/cinema/podcast-marvel-la-fabrique-des-super-heros" target="_blank">Marvel - La Fabrique des super-héros</a></h1>
+				<p class="description">Une série en sept épisodes thématiques qui décrypte l'adaptation au cinéma des super-héros des comics Marvel</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> L'armure d'Iron Man peut-elle être construite ? Captain America est-il un super-héros républicain ? Si, comme beaucoup à la rédaction de franceinfo, vous êtes fan des Avengers, ce podcast est fait pour vous. (Benoît Zagdoun)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 15 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 7 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/mdr_comedies_100_francaises.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/mdr/" target="_blank">MDR - Comédies 100% françaises</a></h1>
+				<p class="description">Le podcast hebdomadaire 100% comédies françaises, présenté par Daniel Andreyev. Les comédies romantiques, burlesques, les comédies de mœurs, les films de gloires de YouTube, les poilades et les ratages, tout est dans "MDR".</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Les comédies françaises, les meilleures et (souvent) les pires sont analysées et décryptées avec humour. On sent la passion contrariée de l’équipe de "MDR" pour les comédies françaises dans leurs savoureux verdicts, rarement flatteurs mais sans méchanceté gratuite. (Marc Pédeau)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 20 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>		
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/nanarland_le_podcast.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="http://www.rivieraferraille.com/nanarland/" target="_blank">Nanarland le podcast</a></h1>
+				<p class="description">Les tauliers de "Nanarland" explorent toutes les deux semaines les thèmes emblématiques des nanars, ces films tellement ratés qu’ils en deviennent passionnants.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Les très très mauvais films, c'est souvent plus drôle à raconter qu'à regarder. D'où l'utilité de ce podcast, qui décline régulièrement les pires nanars par thème. Mention spéciale à celui consacré au football avec des daubes intergalactiques comme Soccer Dog, où un chien gagne (en gros) la Coupe d'Ecosse, Le Führer en folie, quand la Seconde Guerre mondiale se joue sur un match de foot, et United Passions, le film à 40 millions de la Fifa que personne n'a jamais vu (et il y a une bonne raison). (Pierre Godon)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/nocine.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/nocine/" target="_blank">NoCiné</a></h1>
+				<p class="description">L’émission hebdomadaire de la pop culture ciné. Blockbusters, films de genre, séries Netflix et rééditions VOD / DVD cultes.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Le ciné pop culture décrypté par des spécialistes jamais avares de bonnes anecdotes sur les tournages et réalisateurs/acteurs. Le tout accompagné d'analyses pointues sans jamais se la raconter façon Télérama. (Jérôme Comin)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> De 15 minutes à 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/notube.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/notube/" target="_blank">NoTube</a></h1>
+				<p class="description">Deux fois par mois, le journaliste Vincent Manilève invite des chroniqueurs et un(e) vidéaste pour parler des coulisses de YouTube : poids des networks, situation des enfants youtubeurs, partenariats plus ou moins explicites.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Sans doute le meilleur choix pour mieux connaître les dessous de la plus importante plateforme vidéo du monde. Les problématiques sont toujours bien choisies et traitées, et les recommandations de fin d'épisodes permettent de découvrir de nombreuses chaînes passionnantes. (Vincent Matalon)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 40 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/nouveau_modele.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://www.nouveaumodelepodcast.com/podcast-1/" target="_blank">Nouveau modèle</a></h1>
+				<p class="description">Entretiens sur la mode responsable</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> De longs entretiens avec des personnalités qui réfléchissent à la mode de demain. (Robin Prudent)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 40 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/nouvelle_ecole.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://nouvelleecole.org/" target="_blank">Nouvelle école</a></h1>
+				<p class="description">Ils sont danseur étoile, chanteur, humoriste, animateur... Chaque semaine, rencontre avec les Français (connus ou anonymes) les plus inspirants, ceux qui sortent des sentiers battus.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Ce podcast, c'est comme si vous étiez autour d'un café, à discuter avec des gens inspirants. Ils ont osé dans la vie et vous expliquent comment. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/plan_culinaire.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://louiemedia.com/plan-culinaire/" target="_blank">Plan culinaire</a></h1>
+				<p class="description">Pourquoi mange-t-on de la façon dont on mange? Qu’est-ce que cela dit de notre société ? Les Français parlent beaucoup plus de nourriture que le reste du monde, en particulier à table. Chaque premier vendredi du mois, Plan culinaire (coanimé par notre collègue Nora Bouazzouni) alimente ces conversations et cuisine nos habitudes alimentaires.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Ce podcast est aussi cool que son titre. Nora Bouazzouni et Mélissa Bounoua partent d’une question d’apparence innocente (“Pourquoi fait-on la queue deux heures pour manger une pizza ?”...) pour nous emmener avec bonne humeur vers des réflexions sociologiques et historiques. A écouter en cuisinant. (Marc Pédeau)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 30 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>	
+	<div class="filterDiv societe long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/poudreuse_dans_la_meuse.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://www.arteradio.com/son/616477/poudreuse_dans_la_meuse" target="_blank">Poudreuse dans la Meuse</a></h1>
+				<p class="description">Le département de la Meuse détient le record de la consommation d'héroïne en France. Pourquoi tant de trafics et de défonce en zone rurale ?</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Une fresque frappante qui va du consommateur aux forces de police. On sent l'isolement et le désœuvrement dans leurs voix, tout comme l'engagement dans celle des autorités. (Pierre-Louis Caron)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> 39 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 1 épisode</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>	
+	<div class="filterDiv societe court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/que_sont-ils_devenus.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://www.arteradio.com/serie/que_sont_ils_devenus" target="_blank">Que sont-ils devenus ?</a></h1>
+				<p class="description">Ancienne prof dans une banlieue difficile, Delphine Saltel retrouve les élèves qu’elle avait enregistrés au collège et confronte leur voix d’enfant à leur parcours d’adulte.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Au-delà du facile "avant/après", l'auteure s'interroge aussi sur le destin de l'éducation nationale et le sien. (Pierre-Louis Caron)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 20 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 4 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/qui_ma_file_la_chlamydia.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="http://www.nouvellesecoutes.fr/qui-ma-file-la-chlamydia/" target="_blank">Qui m'a filé la chlamydia ?</a></h1>
+				<p class="description">En janvier 2017, Anouk reçoit un SMS d’un amant qui lui annonce qu’il a la chlamydia et qu’elle ferait bien de se faire dépister. Quelques jours après cette annonce, le verdict tombe. Déterminée, elle décide de mener l’enquête : qui a donc bien pu lui refiler cette saleté d’IST ?</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Une enquête jouissive (sans mauvais jeu de mot) sur une IST dont on ne parle pas souvent. Non seulement vous apprendrez que ça peut s'attraper même en se protégeant, mais vous rirez à l'écoute des déboires sexuels d'Anouk. Ce podcast ne recule devant aucun tabou et décrit par le menu la sexualité d'une jeune femme en 2018. Coup de cœur ! (Julie Rasplus)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 20 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 5 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/quouir.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="http://www.nouvellesecoutes.fr/quouir/" target="_blank">Quouïr</a></h1>
+				<p class="description">Ce podcast donne la parole à des personnes qui ont décidé de faire entendre qui elles sont. Homosexuelles, bi ou trans, elles habitent en Ile-de-France, en Loire-Atlantique ou dans les Alpes-Maritimes. Elles racontent leur cheminement et ce moment charnière de leur vie qui leur a apporté soulagement, joie, mais qui a aussi été, parfois, source de violence et de rejet.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Témoignages touchants de personnes LGBT+ qui racontent leur parcours, de la compréhension de leur orientation sexuelle à leur vie amoureuse, en passant par leur coming out. Des LGBT+ qui parlent d'eux-mêmes, ce n'est pas si courant dans les médias ! On apprend plein de choses. Et le générique est in-cro-ya-ble. Petit moins : chaque épisode est centré autour d'un parcours, donc tous ne se valent pas. (Mathilde Goupil)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 30 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 6 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/radio_voyageurs.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="https://www.voyageursdumonde.fr/voyage-sur-mesure/esprit-voyageurs/radio-voyageurs" target="_blank">Radio voyageurs</a></h1>
+				<p class="description">Débats, bons plans, tendances : une émission qui aborde le voyage sous toutes ses facettes.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Comment sortir des sentiers battus en voyage ? "Radio voyageurs" est une discussion, entre spécialistes, à écouter avant d'organiser ses vacances. Le format est proche d'une émission, c'est instructif ! (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 40 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv lifestyle court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/regard.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Lifestyle</div>
+				<h1 class="title"><a href="http://feed.pippa.io/public/shows/regard" target="_blank">Regard</a></h1>
+				<p class="description">Découvrez des personnalités qui explorent le regard que l’on porte sur soi, celui que l’on imagine que les autres portent, celui que l’on aimerait porter sur les autres… D'anecdotes légères en histoires poignantes, "Regard" nous dévoile des moments de vie dans lesquels chaque femme pourra se reconnaître.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Discussions passionnantes sur la beauté et la relation à son corps. C'est fluide, intime et très émouvant. Coup de cœur pour la musique d'intro. (Julie Rasplus)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 25 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 10 épisodes</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/riviera_detente.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="http://www.rivieraferraille.com/riviera-detente/" target="_blank">Riviera Détente</a></h1>
+				<p class="description">Des conversations, de l’improvisation et de la bonne humeur sous le soleil et dans l’insouciance.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Un podcast qui n'est pas là pour se prendre la tête, qui donne l'impression d'écouter tes potes. (Vincent Winter)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe lifestyle court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/sex_and_sounds.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société, Lifestyle</div>
+				<h1 class="title"><a href="https://www.arteradio.com/emission/sex_and_sounds" target="_blank">Sex and Sounds</a></h1>
+				<p class="description">Le sexe, tout le monde en parle - il paraît même qu'on en parle trop, et que ce serait du voyeurisme. Mais justement ! Parce que le voyeur utilise l'œil, il a tendance à oublier l'oreille. Pour se réconcilier avec nos cinq sens, ARTE Radio propose "Sex and Sounds", le premier podcast dédié aux liaisons fructueuses entre plaisirs d'en-bas et sons d'en-haut.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Accents, sextoys, dirty talk, gémissements... La sexperte Maïa Mazaurette chatouille nos oreilles en décryptant notre rapport au son au lit. C'est toujours drôle, coquin et fort intéressant. (Nora Bouazzouni)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 5 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/silence_on_joue.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="https://www.liberation.fr/silence-on-joue,100295" target="_blank">Silence, on joue</a></h1>
+				<p class="description">Chroniques des jeux vidéo du moment par des journalistes spécialisés.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Un des meilleurs (et des plus anciens) podcasts sur l'actualité du jeu vidéo. Pertinent et argumenté. (Elodie Drouard)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1h20</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv geek long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/studio_404.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Geek</div>
+				<h1 class="title"><a href="http://dequaliter.com/" target="_blank">Studio 404</a></h1>
+				<p class="description">Chaque mois, les quatre chroniqueurs débattent des réseaux sociaux, jeux vidéo, nouvelles technologies et, surtout, de nos nouveaux comportement envers eux.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Mélangez débats, analyses, futurologie et saupoudrez le tout de bonnes blagues : vous obtenez le podcast français sans doute le plus agréable à écouter sur les bouleversements que provoque le numérique dans nos vies. (Vincent Matalon)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 2 heures</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/transfert.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="http://www.slate.fr/podcasts/" target="_blank">Transfert</a></h1>
+				<p class="description">Ils s’appellent Serge, Mathieu, Hugo. Elles s’appellent Nathalie, Lara, Lucile... Tous nous ouvrent les portes de leur intimité, nous racontent leurs secrets. Voici leurs histoires.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> "Transfert" soulage notre double voyeuriste. On écoute les histoires des autres et on se sent moins seul ! C'est mieux qu'une heure chez le psy et on rit, on pleure, on retient son souffle à l'écoute de ces récits de vie. Un incontournable. (Julie Rasplus)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 10 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu court">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/un_bien_beau_brouhaha.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="https://www.boxsons.fr/rubrique/un-bien-beau-brouhaha/" target="_blank">Un bien beau brouhaha</a></h1>
+				<p class="description">Revue des sons de la semaine.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> L'actu sous une forme (complètement) différente et originale. Pascale Clark vous embarque dans un résumé sonore des dernières informations. Cris, petits bruits, silences... C'est presque hypnotisant ! A noter que, pour le moment, le podcast est en pause. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> 10 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv culture long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/un_episode_et_jarrete.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Culture</div>
+				<h1 class="title"><a href="https://www.binge.audio/category/uej/" target="_blank">Un épisode et j'arrête</a></h1>
+				<p class="description">Le podcast de l’Association française des critiques de séries.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Que vous soyez sérivore ou consommateur occasionnel, ce podcast est pour vous. L'équipe fournit des analyses poussées, autant sur les séries dont tout le monde parle que sur celles, plus discrètes, qui méritent d'être découvertes. Garanti sans spoil ! (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 30 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/un_faux_prophete.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="https://www.arteradio.com/son/61658673/un_faux_prophete" target="_blank">Un faux prophète</a></h1>
+				<p class="description">Témoignage de Mohamed, qui s'est radicalisé en prison et a, à son tour, exhorté des détenus à s'entraîner pour le jihad. Aujourd'hui sur la voie de la réinsertion, il raconte le processus d'embrigadement derrière les barreaux.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Un témoignage rare sur les procédés de radicalisation en prison. Troublant.</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> 34 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> 1 épisode</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/un_podcast_a_soi.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="https://www.arteradio.com/emission/un_podcast_soi" target="_blank">Un podcast à soi</a></h1>
+				<p class="description">"Un podcast à soi" mêle documentaires et entretiens, récits intimes et paroles d’expert.e.s, textes inspirants et réflexions personnelles, pour évoquer les questions de société liées à l’égalité entre les femmes et les hommes. Travail, éducation, santé, écologie, sport, parentalités, sexualités, violences, discriminations...</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Garde des enfants, identité masculine, écologie… Des sujets très bien documentés avec des entretiens pertinents, qui analysent la société via les pensées et recherches d'auteures mêlant classe, race et genre (Audre Lorde, bell hooks, Angela Davis…), ce qui est assez rare. Très instructif. (Elise Lambert)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Mensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe geek long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/usbek_rica.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société, Geek</div>
+				<h1 class="title"><a href="https://podcasts.usbeketrica.com/" target="_blank">Usbek & Rica</a></h1>
+				<p class="description">"Usbek & Rica" est le média qui explore le futur. Tous les futurs : ceux qui nous font peur et ceux dont on rêve.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Des entretiens aussi bien technologiques que philosophiques sur le futur et tout ce qui peut nous attendre, de l'IA aux réseaux sociaux en passant par l'homme augmenté ou l'écologie. (Jérôme Comin)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 40 minutes</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv societe long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/vieille_branche.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Société</div>
+				<h1 class="title"><a href="http://www.nouvellesecoutes.fr/vieille-branche/" target="_blank">Vieille branche</a></h1>
+				<p class="description">"Vieille branche" rend visite à des personnalités de la politique, des idées, de la culture ou des arts, âgées de plus de 75 ans.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> A travers des discussions avec ces acteurs de la société d'hier, on en apprend sur celle d'aujourd'hui. Un podcast à écouter pour prendre de la hauteur. (Camille Adaoust)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> De 15 minutes à 1 heure</span><span class="calendar"><i class="fa fa-calendar"></i> Bimensuel</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="filterDiv actu long">
+		<div class="card">
+		  <div class="column">
+			<div class="post-module hover">
+			  <div class="thumbnail">
+				<img src="https://nicolasenault.github.io/podcasts/vu_du_banc.png"/>
+			  </div>
+			  <div class="post-content">
+				<div class="category">Actu</div>
+				<h1 class="title"><a href="http://www.vudubanc.fr/" target="_blank">Vu du banc</a></h1>
+				<p class="description">Analyses et débats tactiques sur les dernières grosses rencontres de foot.</p>
+				<p class="description"><br /><span class="avis">L'avis de la rédac.</span> Le foot comme vous ne l'entendez jamais (ou trop rarement) analysé chez les diffuseurs traditionnels. Du fond, de la pertinence, tout en restant abordable. Un must si vous voulez (vraiment) comprendre comment joue votre équipe préférée. (Thomas Baïetto)</p>
+				<div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o"></i> Environ 1h20</span><span class="calendar"><i class="fa fa-calendar"></i> Hebdomadaire</span></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+</div>
+  
+<script>
+
+var shorty = document.getElementById('corto');
+var longy = document.getElementById('longo');
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all" || c == "all court" || c == "all long") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+	console.log(c)
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+var checkClick ="all";
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+	
+	checkClick = this.id;
+	checkCourtClick();
+	});
+	 
+	function checkCourtClick() {
+		if (checkClick == "all")
+			{
+			if (shorty.checked) {
+			if (longy.checked) {
+			filterSelection("all")
+			} else {
+			filterSelection("court")
+			}
+		} else {
+			if (longy.checked) {
+			filterSelection("long")
+			} else {
+			filterSelection("vide")
+			}
+		}
+			}
+		else {
+		if (shorty.checked) {
+			if (longy.checked) {
+			filterSelection(checkClick)
+			} else {
+			filterSelection(checkClick + " court")
+				}
+		} else {
+			if (longy.checked) {
+			filterSelection(checkClick + " long")
+			} else {
+			filterSelection(checkClick + " vide")
+				}
+			}
+		}
+	}
+}
+
+function checkSlide () {
+	if (checkClick == "all")
+		{
+		if (shorty.checked) {
+		if (longy.checked) {
+		filterSelection("all")
+		} else {
+		filterSelection("court")
+		}
+	} else {
+		if (longy.checked) {
+		filterSelection("long")
+		} else {
+		filterSelection("vide")
+		}
+	}
+		}
+	else {
+
+	if (shorty.checked) {
+		if (longy.checked) {
+		filterSelection(checkClick)
+		} else {
+		filterSelection(checkClick + " court")
+			}
+	} else {
+		if (longy.checked) {
+		filterSelection(checkClick + " long")
+		console.log(checkClick + " long")
+		} else {
+		filterSelection(checkClick + " vide")
+			}
+		}
+	}
+}
+
+</script>
+</body>
+</html>
