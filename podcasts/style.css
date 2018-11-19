@@ -1,0 +1,234 @@
+@font-face{
+font-family: 'BrownRegular';
+font-weight: normal;
+font-style: normal;
+src: url('https://www.francetvinfo.fr/skin/www/css/font/brown-regular/Brown-Regular.eot?#iefix') format('embedded-opentype'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-regular/Brown-Regular.woff2') format('woff2'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-regular/Brown-Regular.woff') format('woff'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-regular/Brown-Regular.ttf') format('truetype'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-regular/Brown-Regular.svg#webfont') format('svg');
+}
+
+@font-face{
+font-family: 'BrownBold';
+font-weight: bold;
+font-style: normal;
+src: url('https://www.francetvinfo.fr/skin/www/css/font/brown-bold/Brown-Bold.eot?#iefix') format('embedded-opentype'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-bold/Brown-Bold.woff2') format('woff2'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-bold/Brown-Bold.woff') format('woff'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-bold/Brown-Bold.ttf') format('truetype'),
+    url('https://www.francetvinfo.fr/skin/www/css/font/brown-bold/Brown-Bold.svg#webfont') format('svg');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width:940px;
+  width:100%
+}
+
+.filterDiv {
+  display: none;
+  float: left;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  overflow: hidden;
+  float:left;
+}
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #fff;
+  cursor: pointer;
+  font: bold 14px BrownBold, Arial, sans-serif;
+  color:#1e1e1e;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color:#ffc300;
+}
+
+.btn.active {
+  background-color: #e2e2e2;
+  color: #1e1e1e;
+}
+
+.actu{
+  margin: 5px;
+}
+.societe{
+  margin: 5px;
+}
+.culture{
+  margin: 5px;
+}
+.geek{
+  margin: 5px;
+}
+.lifestyle{
+  margin: 5px;
+}
+
+.post-module {
+  position: relative;
+  z-index: 1;
+  display: block;
+  background: #FFFFFF;
+  min-width: 300px;
+  height: 700px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.post-module .thumbnail {
+  background: #fff;
+  overflow: hidden;
+  width: 300px;
+  height: 130px;
+  text-align: center;
+}
+
+.court .long {
+  float:left;
+  width:150px;
+}
+
+.checkos {
+  margin:10px;
+  font: bold 12px BrownBold, Arial, sans-serif;
+}
+
+.post-module .post-content {
+  position: absolute;
+  background: #FFFFFF;
+  width: 100%;
+  padding-top:15px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.post-module .post-content .category {
+  position: absolute;
+  top: -26px;
+  left: 0;
+  background: #ce3200;
+  padding: 6px 8px;
+  color: #FFFFFF;
+  font: bold 12px BrownBold, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.post-module .post-content .title {
+  margin: 0;
+  padding: 0 0 10px;
+  color: #333333;
+  font: bold 22px BrownBold, Arial, sans-serif;
+}
+.post-module .post-content .title a{
+  text-decoration: none;
+  color: #333333;
+}
+
+.post-module .post-content .description {
+  display: none;
+  color: #222;
+  font:16px/20px arial,sans-serif;
+}
+.avis {
+  font-weight:700;
+}
+.post-module .post-content .post-meta {
+  margin: 30px 0 0;
+  color: #999999;
+  font-family: 'Roboto';
+}
+.post-module .post-content .post-meta .timestamp {
+  margin: 0 16px 0 0;
+  font: bold 12px BrownBold, Arial, sans-serif;
+}
+
+.post-module .post-content .post-meta .calendar {
+  margin: 0 16px 0 0;
+  font: bold 12px BrownBold, Arial, sans-serif;
+}
+
+
+.hover .post-content .description {
+  display: block !important;
+  height: auto !important;
+  opacity: 1 !important;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  vertical-align: middle;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ffc300;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ffc300;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.pluto {
+  vertical-align: middle;
+  margin-left:5px;  
+  margin-right:5px;  
+}
