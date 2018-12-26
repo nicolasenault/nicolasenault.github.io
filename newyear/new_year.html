@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<script src="https://d3js.org/d3.v4.js"></script>
+<style>
+
+body {
+	max-width:940px;
+}
+
+#wholeApp {
+	max-width:940px;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  height: 30px;
+  padding: 12px;
+  background: #fff;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  font-family: 'Roboto';
+  font-size:14px;
+}
+
+</style>
+
+</head>
+<body>
+
+	<div id="wholeApp">
+	<div id="tooltip-container"></div>
+	</div>
+
+</body>
+
+<script>
+
+d3.xml("https://nicolasenault.github.io/newyear/news_2018_last.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	if (error) throw error;
+	var importedNode = document.importNode(xml.documentElement, true);
+	d3.select("div#wholeApp")
+	.each(function() {
+		this.appendChild(importedNode);
+	})
+	styleImportedSVG()
+	
+	<!-- d3.select('svg').call(d3.zoom().on("zoom", function () { -->
+    <!-- d3.select('svg').attr("transform", d3.event.transform) -->
+        <!-- })); -->
+});
+
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+	
+	
+	<!-- var svg = d3.select("svg") -->
+	<!-- var zoomLayer  = svg.append("g") -->
+
+function styleImportedSVG () {
+	var groups = d3.select('svg').selectAll('.items');
+		groups.on('click', function() {
+		div.html(this.id)
+			.style("opacity", 1)
+			.style("left", (d3.event.pageX - 30) + "px")
+			.style("top", (d3.event.pageY - 100) + "px");	
+		
+		<!-- console.log('groups', groups); -->
+		for (var i = 0; i < groups._groups[0].length ; i++) {
+			var item = groups._groups[0][i];
+			if (item.getAttribute('id') !== this.id) {
+				d3.select(item).style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 0.3);
+			} else {
+				d3.select(item).style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 1);
+			}
+			
+		}
+		<!-- console.log(this.id); -->
+		//d3.select(this).style("fill", d3.select(this).attr('stroke'))
+			//.attr('fill-opacity', 0.3);
+	})
+	groups.on('mouseover', function() {
+		div.html(this.id)
+			.style("opacity", 1)
+			.style("left", (d3.event.pageX - 30) + "px")
+			.style("top", (d3.event.pageY - 100) + "px");	
+		
+		<!-- console.log('groups', groups); -->
+		for (var i = 0; i < groups._groups[0].length ; i++) {
+			var item = groups._groups[0][i];
+			if (item.getAttribute('id') !== this.id) {
+				d3.select(item).style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 0.3);
+			} else {
+				d3.select(item).style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 1);
+			}
+			
+		}
+		<!-- console.log(this.id); -->
+		//d3.select(this).style("fill", d3.select(this).attr('stroke'))
+			//.attr('fill-opacity', 0.3);
+	})
+	.on('mouseout', function() {
+		for (var i = 0; i < groups._groups[0].length ; i++) {
+			var item = groups._groups[0][i];
+			d3.select(item).style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 1);
+		}
+		//d3.select(this).style("fill", d3.select(this).attr('stroke'))
+			//.attr('fill-opacity', 1);
+	})
+}
+
+<!-- var zoomed = function() { -->
+  <!-- zoomLayer.attr("transform", d3.event.transform); -->
+<!-- } -->
+
+<!-- svg.call(d3.zoom() -->
+	<!-- .scaleExtent([1 / 2, 12]) -->
+	<!-- .on("zoom", zoomed));	 -->
+		
+</script>
