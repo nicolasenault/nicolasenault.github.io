@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<script src="https://d3js.org/d3.v4.js"></script>
+<style>
+
+body {
+	max-width:940px;
+}
+
+#wholeApp {
+	max-width:940px;
+	position:relative;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  display:block;
+  max-width: 600px;
+  padding: 12px;
+  background: #fff;
+  border: 0px;
+  border-radius: 8px;
+  font-family: 'Roboto';
+  font-size:18px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 10px;
+  top:10%;
+}
+
+@media only screen and (max-width: 600px) {
+	div.tooltip {
+		max-width: 300px;
+		font-size:14px;
+		top:2%;
+	}
+}
+
+.closy {
+        position: absolute;
+        top: -12px;
+        right: -11px;
+        width: 26px;
+        height: 26px;
+        background: url('https://nicolasenault.github.io/light.png') no-repeat 0 -23px;
+        text-indent: -9999px;
+        font-size: 0;
+        line-height: 0;
+        opacity: 1;
+        text-transform: uppercase;
+        z-index: 3;
+		border-bottom:0px !important;
+}
+
+.external_link {
+	width:14px;
+	margin-left:8px;
+	margin-top:2px;
+}
+
+</style>
+
+</head>
+<body>
+
+	<div id="wholeApp">
+	</div>
+
+</body>
+
+<script>
+
+function closy() {
+		  div.style("opacity", 0)
+	}
+
+var wholeApp = document.getElementById("wholeApp");	
+var wholeWidth = wholeApp.clientWidth;
+
+d3.xml("https://nicolasenault.github.io/newyear/clean_new_year_3.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	if (error) throw error;
+	var importedNode = document.importNode(xml.documentElement, true);
+	d3.select("div#wholeApp")
+	.each(function() {
+		this.appendChild(importedNode);
+	})
+	styleImportedSVG()
+	
+	
+	var svg = d3.select('svg'),
+          c = d3.select('g');
+	
+  d3.select('svg').call(d3.zoom().scaleExtent([1, 12]).on("zoom", function() {
+        c.attr("transform", d3.event.transform)
+      }));
+});
+
+var div = d3.select("#wholeApp").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+function styleImportedSVG () {
+	var groups = d3.select('svg').selectAll('.items')
+		.on('click', function() {
+		
+		var permalink = this.getAttribute('permalink');
+		<!-- var itemsLeft = this.getBoundingClientRect().left; -->
+		<!-- var itemsTop = this.getBoundingClientRect().top; -->
+		<!-- var itemsWidth = this.getBoundingClientRect().width; -->
+		<!-- var itemsMargintop = itemsTop / 5; -->
+		<!-- var itemsWidthcalc = itemsWidth / 2; -->
+		
+		<!-- var itemsX = this.getBoundingClientRect().x; -->
+		<!-- var itemsY = this.getBoundingClientRect().y; -->
+		
+		div.html('<span class="closy" onclick="closy()">x</span>' + this.id + '<a href="' + permalink + '" target="_blank"><img class="external_link" src="https://nicolasenault.github.io/newyear/external.png" /></a>')
+			.style("opacity", 1)
+			<!-- .style("top", (itemsTop + 20) + "px");	 -->
+			
+		var tooltipWidth = document.querySelector(".tooltip").clientWidth;
+		div.style("left", Math.floor((wholeWidth / 2) - (tooltipWidth / 2)) + "px")
+		
+		<!-- console.log(document.querySelector(".tooltip").clientWidth);	 -->
+				
+		
+		for (var i = 0; i < groups._groups[0].length ; i++) {
+			var item = groups._groups[0][i];
+			if (item.getAttribute('id') !== this.id) {
+				d3.select(item).transition().duration("300").style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 0.1);
+			} else {
+				d3.select(item).style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 1);
+			}
+			
+		}
+	})
+	
+	.on('mouseout', function() {
+	
+		for (var i = 0; i < groups._groups[0].length ; i++) {
+			var item = groups._groups[0][i];
+			d3.select(item).transition().duration("400").style("fill", d3.select(item).attr('stroke')).attr('fill-opacity', 1);
+		}
+		//d3.select(this).style("fill", d3.select(this).attr('stroke'))
+			//.attr('fill-opacity', 1);
+	})
+	
+}
+
+    (function() {
+        // listen messages to send height in real time (for embeds)
+        window.addEventListener('message', function(e) {
+            // retrieve the source of the event
+            var parent = e.source;
+            var prevHeight = 0;
+            var comp = document.getElementById('wholeApp');
+            // loop each seconds
+            setInterval(function() {
+                if (prevHeight !== comp.offsetHeight) {
+                    // send back the height of the component when it changed
+                    parent.postMessage({
+                        fid: e.data.fid,
+                        height: comp.offsetHeight
+                    }, e.origin);
+                }
+                prevHeight = comp.offsetHeight;
+            }, 1000);
+        });
+    })();
+		
+</script>
