@@ -1,9 +1,10 @@
 
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		
 		<title>Test députés</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
 	
 		<script src="https://d3js.org/d3.v3.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,6 +12,7 @@
 		
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300i" rel="stylesheet">
 		  
 		<style type="text/css">
 		
@@ -21,25 +23,34 @@
 		html,
 		body {
 			max-width:940px;
-			width:100%
+			width:100%;
+			margin: 0;
+			padding: 0;
 		}
 		
 		#deputies {
-			overflow: hidden;
+			text-align:center;
 			float:left;
+			margin-top: 10px;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 		
 		.depute {
 			margin:4px;
-			height:250px;
-			float: left;
 			min-width:150px;
-			max-width:150px;
+			width:180px;
+			display: inline-block;
+			overflow: hidden;
+		}
+		.depute.expanted .raisons {
+			display: block;
 		}
 		
 		.mugshot {
-			width:100%
-			max-height:192px;
+			max-height:230px;
 		}
 		
 		.noms {
@@ -47,73 +58,280 @@
 			margin-left:5px;
 			margin-right:5px;
 			margin-bottom:5px;
-			text-align:center;
 			font-family: 'Roboto';
 			font-size:12px;
 			font-weight:700;
 		}
 		
 		.groupe {
-			text-align:center;
-			margin-left:5px;
-			margin-right:5px;
 			font-family: 'Roboto';
 			font-size:12px;
+			max-width:150px;
+			margin: 0 auto;
 		}
 		
+		.circo {
+			font-family: 'Roboto';
+			font-size:12px;
+			max-width:150px;
+			margin: 0 auto;
+		}
 		.check {
 			margin:20px;
 			font-family: 'Roboto';
 			font-size:12px;
 			font-weight:700;
 		}
-		
-		#depCount {
-			width:50px;
-		}
 
 		#filter {
-			max-width:320px;
+			font-family: 'Roboto';
 		}
 		
 		#votes {
-			max-width:320px;
+			font-family: 'Roboto';
+			margin-top:10px;
 		}
+		
+		#selectArea select {
+			font-family: 'Roboto';
+		}
+
+		#depCount {
+			font-family: 'Roboto';
+			font-size:18px;
+			font-weight:700;
+			display: inline-block;
+			margin-left:10px;
+			margin-top: 14px;
+			width: calc(50% - 10px);
+		}
+		
+		#search {
+			width: 280px;
+			height:30px;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			margin-top: 10px;
+			padding: 5px 10px;
+			font-size: inherit;
+		   -webkit-appearance: button;
+		   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		    border: 1px solid #AAA;
+		}
+		
+		input::placeholder {
+			color: #555;
+		}
+		
+		select#selectArea, select#selectGroup{
+	   -webkit-appearance: button;
+	   -webkit-border-radius: 2px;
+	   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	   -webkit-padding-end: 20px;
+	   -webkit-padding-start: 2px;
+	   -webkit-user-select: none;
+	   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+	   background-position: 97% center;
+	   background-repeat: no-repeat;
+	   border: 1px solid #AAA;
+	   color: #555;
+	   font-size: inherit;
+	   margin-right: 10px;
+	   overflow: hidden;
+	   padding: 5px 10px;
+	   text-overflow: ellipsis;
+	   white-space: nowrap;
+	   max-width: 280px;
+	   width: 100%;
+	}
+	select#selectArea, select#selectGroup {
+		background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#fff, #fff 40%, #fff);
+		background-color: #fff;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		padding-left: 15px;
+	}
+	#scrutin {
+		float:left;
+		margin-left:15px;
+		margin-top:0px;
+		margin-bottom: 0;
+	}		
+	.form-radio
+	{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		display: inline-block;
+		position: relative;
+		background-color: #f1f1f1;
+		color: #666;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		cursor: pointer;     
+		margin-right: 7px;
+		outline: none;
+		margin-top:0px;
+		vertical-align: middle;
+	}
+	.form-radio:checked::before
+	{
+		position: absolute;
+		font-family: 'Roboto';
+		font-size:16px;
+		left: 6px;
+		top: 0px;
+		content: '\02143';
+		color:#fff;
+		transform: rotate(40deg);
+	}
+	.form-radio:hover
+	{
+		 background-color: #f7f7f7;
+	}
+	.form-radio:checked
+	{
+		 background-color: #ffc300;
+	}
+	label
+	{
+		 cursor: pointer;
+	} 
+	
+	select#selectStatus {
+		-webkit-appearance: button;
+		-webkit-border-radius: 2px;
+		-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		-webkit-padding-end: 20px;
+		-webkit-padding-start: 2px;
+		-webkit-user-select: none;
+		background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+		background-position: 97% center;
+		background-repeat: no-repeat;
+		border: 1px solid #AAA;
+		color: #555;
+		font-size: inherit;
+		overflow: hidden;
+		padding: 5px 10px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 180px;
+		width: 50%;
+		float:left;
+		margin-top: 10px;
+		display: inline-block;
+	}
+	select#selectStatus {
+		background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#fff, #fff 40%, #fff);
+		background-color: #fff;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		padding-left: 15px;
+	}
+	
+	#voteline {
+		margin-top:5px;
+		font-family: 'Roboto';
+		font-size:12px;
+		font-weight: 300;
+		font-style: italic;		
+	}
+	
+		.mai {
+		margin-top:5px;
+		font-family: 'Roboto';
+		font-size:12px;		
+	}
+	
+		.septembre {
+		margin-top:5px;
+		font-family: 'Roboto';
+		font-size:12px;		
+	}
+	
+		.envoye {
+		margin-top:5px;
+		font-family: 'Roboto';
+		font-size:12px;		
+	}
+	
+	.raisons {
+		display:none;
+		font-family: 'Roboto';
+		font-size:12px;
+		text-align:left;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		max-width:170px;
+		margin-left: 10%;
+	}
+	
+	.toggleRaisons {
+		margin-top: 5px;
+		margin-bottom: 15px;
+		font-family: 'Roboto';
+		color: #000;
+		background-color: #ffc500;
+		border-color: #4cae4c;
+		display: inline-block;
+		padding: 3px 6px;
+		margin-bottom: 0;
+		font-size: 12px;
+		font-weight: 400;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 4px;
+	}
 		
 		</style>
 	</head>
  
 	<body>
-	
-		<div id="depCount" class="fz-200 lh-200">0</div>
-		
+	<div id="wholeApp">
 		<div id="filter">
 			<select id="selectArea">
 				<option value="">-- Départements --</option>
 			</select>
 			
 			<select id="selectGroup">
-				<option value="">-- Groupes --</option>
+				<option value="">-- Groupes parlementaires --</option>
 			</select>
 		
-			<input type="text" id="search" placeholder="Cherchez votre député">
+			<input type="text" id="search" placeholder="Saisissez le nom de votre député(e)">
 		</div>
 		
 		<div id="votes">
-			<button type="button" onclick="scrutin(may)">Scrutin du 29 mai</button>
-			<button type="button" onclick="scrutin(septembre)">Scrutin du 15 septembre</button>
-			<button type="button" onclick="scrutin(envoye)">Scrutin "Envoyé spécial"</button>
+		<p id="scrutin">Scrutin :</p>
+		  <input id="scrutin1" type="radio" name="scrutin" class="form-radio" value="mai" checked ><label for="scrutin1">29 mai</label>
+		  <input id="scrutin2" type="radio" name="scrutin" class="form-radio" value="septembre" ><label for="scrutin2">15 septembre</label>
+		  <input id="scrutin3" type="radio" name="scrutin" class="form-radio" value="envoye_special" ><label for="scrutin3">Envoyé spécial</label>
 		</div>
-		
 		<select id="selectStatus">
-			<option>Vote</option>
-		</select>		
-		
-		<div id="deputies"></div>
+		</select>	
+	<div id="depCount">0</div>
+	<div id="deputies"></div>
+	</div>
 	</body>
 </html>
 <script type="text/javascript">
-
+	var votesClassiques = [];
+	var votesSpecials = [];
+	
 	var selectArea = document.getElementById("selectArea");
 	var optionsArea = ["Ain", "Aisne", "Allier", "Alpes-de-Haute-Provence", "Alpes-Maritimes", "Ardèche", "Ardennes", "Ariège", "Aube", "Aude", "Aveyron", "Bas-Rhin", "Bouches-du-Rhône", "Calvados", "Cantal", "Charente", "Charente-Maritime", "Cher", "Corrèze", "Corse-du-Sud", "Côte-d'Or", "Côtes-d'Armor", "Creuse", "Deux-Sèvres", "Dordogne", "Doubs", "Drôme", "Essonne", "Eure", "Eure-et-Loir", "Finistère", "Français établis hors de France", "Gard", "Gers", "Gironde", "Guadeloupe", "Guyane", "Haut-Rhin", "Haute-Corse", "Haute-Garonne", "Haute-Loire", "Haute-Marne", "Haute-Saône", "Haute-Savoie", "Haute-Vienne", "Hautes-Alpes", "Hautes-Pyrénées", "Hauts-de-Seine", "Hérault", "Ille-et-Vilaine", "Indre", "Indre-et-Loire", "Isère", "Jura", "La Réunion", "Landes", "Loir-et-Cher", "Loire", "Loire-Atlantique", "Loiret", "Lot", "Lot-et-Garonne", "Lozère", "Maine-et-Loire", "Manche", "Marne", "Martinique", "Mayenne", "Mayotte", "Meurthe-et-Moselle", "Meuse", "Morbihan", "Moselle", "Nièvre", "Nord", "Nouvelle-Calédonie", "Oise", "Orne", "Paris", "Pas-de-Calais", "Polynésie Française", "Puy-de-Dôme", "Pyrénées-Atlantiques", "Pyrénées-Orientales", "Réunion", "Rhône", "Saint-Barthélemy et Saint-Martin", "Saint-Pierre-et-Miquelon", "Saône-et-Loire", "Sarthe", "Savoie", "Seine-et-Marne", "Seine-Maritime", "Seine-Saint-Denis", "Somme", "Tarn", "Tarn-et-Garonne", "Territoire de Belfort", "Val-d'Oise", "Val-de-Marne", "Var", "Vaucluse", "Vendée", "Vienne", "Vosges", "Wallis-et-Futuna", "Yonne", "Yvelines"];
 	_.each(optionsArea, function(opt) {
@@ -132,16 +350,6 @@
 		selectGroup.appendChild(el);
 	});
 	
-	var selectStatus = document.getElementById("selectStatus");
-	var optionsStatus = ["Pour l'interdiction", "Contre l'interdiction", "Abstention", "Absent(e)"];
-	_.each(optionsStatus, function(opt) {
-		var el = document.createElement("option");
-		el.textContent = opt;
-		el.value = opt;
-		selectStatus.appendChild(el);
-	});
-
-	
 	var getDep = document.getElementById("selectArea");
 	var choosenDep = null;
 	
@@ -149,26 +357,32 @@
 	var choosenGroup = null;
 
 	var getStatus = document.getElementById("selectStatus");
-	var choosenStatus = null;	
+	var choosenStatus = null;
 	
+	var getRadios = document.getElementsByName('scrutin');
+	var choosenScrutin = null;
+	_.each(getRadios, function(rad) {
+		rad.addEventListener('change', function() {
+			_updateScrutin(this.value);
+			_filterCards();
+			_generateCards();
+		});
+	});
+
 	getDep.addEventListener("change", function() {
 		choosenDep = (this.value.length === 0 ? null : this.value);
-		console.log(choosenDep);
 		_filterCards();
 		_generateCards();
 	});
 
 	getGroup.addEventListener("change", function() {
 		choosenGroup = (this.value.length === 0 ? null : this.value);
-		console.log(choosenGroup);
 		_filterCards();
 		_generateCards();
 	});
 
 	getStatus.addEventListener("change", function() {
-		if (this.value.length === 0) return;
-		choosenStatus = this.value;
-		console.log(choosenStatus);
+		choosenStatus = (this.value.length === 0 ? null : this.value);
 		_filterCards();
 		_generateCards();
 	});
@@ -180,11 +394,13 @@
 	var items = [];
 	var filteredItems = [];
 	
-	d3.csv("https://nicolasenault.github.io//deputes/deputes_clean.csv", function(data) {
+	d3.csv("https://nicolasenault.github.io/deputes/glyphosate_deputes_last.csv", function(data) {
 		items = data;
 		filteredItems = items;
 		
 		_generateCards();
+		_extractVotesTypes();
+		_updateScrutin('mai');
 	});
 	
 	function _generateCards() {
@@ -195,22 +411,48 @@
 			$('#deputies').append(card);
 		}
 		
-		<!-- if filteredItems == 0 { -->
-			
-		<!-- } -->
-		
 		var depCount = document.getElementById("depCount");
-		depCount.innerHTML = filteredItems.length;
+
+		if (filteredItems.length < 2) {
+			depCount.innerHTML = filteredItems.length + " député";
+		} else
+			depCount.innerHTML = filteredItems.length + " députés";
+	}
+	
+		function showReason() {
+			console.log(this);
+			 <!-- this.className += " active"; -->
+		}
+	
+	function _extractVotesTypes() {
+		var valuesVotesMai = _.map(items, function(item) { return item.mai; });
+		votesClassiques = _.uniq(valuesVotesMai);
+		votesClassiques.sort(function(a, b){
+			if(a < b) { return -1; }
+			if(a > b) { return 1; }
+			return 0;
+		});
+		var valuesVotesSpecial = _.map(items, function(item) { return item.envoye_special; });
+		votesSpecials = _.uniq(valuesVotesSpecial);
+		votesSpecials.sort(function(a, b){
+			if(a < b) { return -1; }
+			if(a > b) { return 1; }
+			return 0;
+		});
 	}
 	
 	function _filterCards() {
-		// TODO recup values filters
+		console.warn('choosenScrutin ???', choosenScrutin);
 		filteredItems = _.filter(items, function(item) {
-			//console.log('item ?', item);
 			if (choosenDep && choosenDep !== item.dep) {
 				return false;
 			}
 			if (choosenGroup && choosenGroup !== item.groupe) {
+				return false;
+			}
+			
+			console.log('item[choosenScrutin]', item[choosenScrutin]);
+			if (choosenScrutin && choosenStatus && item[choosenScrutin] !== choosenStatus) {
 				return false;
 			}
 			
@@ -221,7 +463,6 @@
 			}
 			return true;
 		});
-		// TODO filter
 	}
 	
 	function _createCard(person) {
@@ -229,10 +470,12 @@
 		node.className = 'depute';
 		
 		node.setAttribute('title', person.deputes);
-		node.innerHTML = '<img class="mugshot" src="' + person.photo + '"/><div class="noms">' + person.deputes + '</div><div class="groupe">' + person.groupe + '</div>';
+		node.innerHTML = '<img class="mugshot" src="' + person.photo + '"/><div class="noms">' + person.deputes + '</div><div class="groupe">' + person.groupe + '</div><div class="circo">' + person.dep + ' (' + person.circo + ')</div><div id="voteline">Pour ou contre l\'interdiction ?</div><div class="mai">Mai : ' + person.mai + '</div><div class="septembre">Septembre : ' + person.septembre + '</div><div class="envoye">Envoyé spécial : ' + person.envoye_special + '</div><button class="toggleRaisons">+</button><div class="raisons"><div>Raisons de l\'absence : </div>' + person.raisons + '</div>';
 		
+		node.querySelector('.toggleRaisons').addEventListener('click', function(e) {
+			this.parentNode.classList.toggle('expanted');
+		});
 		node.addEventListener('click', function() {
-			console.log('here', this.getAttribute('title'));
 		});
 		return node;
 	
@@ -243,4 +486,45 @@
 		_filterCards();
 		_generateCards();
 	}
+	
+	function _updateScrutin(vote) {
+		choosenScrutin = vote;
+		choosenStatus = null;
+		var newValues = [];
+		switch (vote) {
+			case 'envoye_special': 
+			newValues = votesSpecials;
+			break;
+			default:
+			newValues = votesClassiques;
+			break;
+		}
+		var select = document.getElementById('selectStatus');
+		select.innerHTML = '';
+		selectStatus.options[0] = new Option('-- Vote --', '');
+		_.each(newValues, function(val) {
+			selectStatus.options[selectStatus.options.length] = new Option(val, val);
+		});
+	};
+
+    (function() {
+        // listen messages to send height in real time (for embeds)
+        window.addEventListener('message', function(e) {
+            // retrieve the source of the event
+            var parent = e.source;
+            var prevHeight = 0;
+            var comp = document.getElementById('wholeApp');
+            // loop each seconds
+            setInterval(function() {
+                if (prevHeight !== comp.offsetHeight) {
+                    // send back the height of the component when it changed
+                    parent.postMessage({
+                        fid: e.data.fid,
+                        height: comp.offsetHeight
+                    }, e.origin);
+                }
+                prevHeight = comp.offsetHeight;
+            }, 1000);
+        });
+    })();	
 </script>
