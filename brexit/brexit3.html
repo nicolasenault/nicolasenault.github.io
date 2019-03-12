@@ -32,7 +32,7 @@ function closy() {
 var wholeApp = document.getElementById("wholeApp");	
 var wholeWidth = wholeApp.clientWidth;
 
-d3.xml("https://nicolasenault.github.io/brexit/Brexit6-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("https://nicolasenault.github.io/brexit/Brexit5-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
 	if (error) throw error;
 	var importedNode = document.importNode(xml.documentElement, true);
 	d3.select("div#wholeApp")
