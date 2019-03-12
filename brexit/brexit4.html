@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://www.francetvinfo.fr/skin/dist/www/css/content/global-07fac37110.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="https://www.francetvinfo.fr/skin/dist/www/css/website-style-4b72a9be71.css" media="screen" />
+
+<style>
+
+body {
+	max-width:940px;
+}
+
+#wholeApp {
+	max-width:940px;
+	position:relative;
+}
+</style>
+
+</head>
+<body>
+
+	<div id="wholeApp">
+	</div>
+
+</body>
+
+<script>
+
+function closy() {
+		  div.style("opacity", 0)
+	}
+
+var wholeApp = document.getElementById("wholeApp");	
+var wholeWidth = wholeApp.clientWidth;
+
+d3.xml("https://nicolasenault.github.io/brexit/Brexit4-01.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	if (error) throw error;
+	var importedNode = document.importNode(xml.documentElement, true);
+	d3.select("div#wholeApp")
+	.each(function() {
+		this.appendChild(importedNode);
+	})
+	
+	var svg = d3.select('svg'),
+          c = d3.select('g');
+});
+
+var div = d3.select("#wholeApp").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+    (function() {
+        // listen messages to send height in real time (for embeds)
+        window.addEventListener('message', function(e) {
+            // retrieve the source of the event
+            var parent = e.source;
+            var prevHeight = 0;
+            var comp = document.getElementById('wholeApp');
+            // loop each seconds
+            setInterval(function() {
+                if (prevHeight !== comp.offsetHeight) {
+                    // send back the height of the component when it changed
+                    parent.postMessage({
+                        fid: e.data.fid,
+                        height: comp.offsetHeight
+                    }, e.origin);
+                }
+                prevHeight = comp.offsetHeight;
+            }, 1000);
+        });
+    })();
+		
+</script>
+<h2 class="number" id="leave"><span>1</span>Le Royaume-Uni quitte l'UE&nbsp;avec un accord&nbsp;le 29 mars</h2>
+<p></p>
+<p>Dans ce cas, Theresa May peut souffler. Ces allers-retours entre Londres et Bruxelles ont pay&eacute; et les d&eacute;put&eacute;s britanniques ont accept&eacute; de voter mardi son plan de retrait. La sortie de l'Union europ&eacute;enne se fera de <em>"mani&egrave;re ordonn&eacute;e"</em>, en vertu de l'accord n&eacute;goci&eacute; avec les 27. Concr&egrave;tement, le Royaume-Uni entre ainsi dans une &ldquo;p&eacute;riode de transition&rdquo; cens&eacute;e durer jusqu'au 31 d&eacute;cembre 2020 (avec possibilit&eacute; de la prolonger). Pendant ce laps de temps, les citoyens britanniques ne constateront pas de grandes diff&eacute;rences dans leur quotidien,&nbsp;car la libre circulation et le march&eacute; unique seront dans un premier temps maintenus.</p>
+<p>Cette p&eacute;riode de transition permettra au gouvernement britannique de plancher, secteur par secteur, sur les nouvelles r&egrave;gles qui r&eacute;giront les relations entre le Royaume-Uni et l'UE. Le Royaume-Uni pourra d&eacute;sormais nouer de nouveaux accords commerciaux, lesquels n'entreront en vigueur qu'au 1er janvier 2021. D'ici l&agrave;, les entreprises devront se pr&eacute;parer &agrave; ob&eacute;ir &agrave; ces nouvelles r&egrave;gles tout en respectant les anciennes.</p>
+<p></p>
+<h2 class="number" id="hard"><span>2</span>Le Royaume-Uni sort de l'UE sans accord le 29 mars</h2>
+<p></p>
+<p>En cas de rejet de l'accord mardi 12 mars, les parlementaires britanniques se prononceront d&egrave;s le lendemain sur un possible "no deal", autrement dit une sortie de l'UE sans accord. Une perspective souvent&nbsp;d&eacute;crite comme le sc&eacute;nario catastrophe en raison de son attendu&nbsp;<a href="/monde/europe/la-grande-bretagne-et-l-ue/brexit-le-cout-exorbitant-d-une-sortie-sans-accord_3155139.html">co&ucirc;t exorbitant</a>.</p>
+<p>A&nbsp;partir du 30 mars, les relations commerciales entre l'Union europ&eacute;enne et le Royaume-Uni devront donc ob&eacute;ir aux r&egrave;gles de l'Organisation mondiale du commerce. Les droits de douane pourrait exploser et les prix flamber... Le Royaume-Uni devra agir vite et pourrait alors d&eacute;cider de lib&eacute;raliser &agrave; l'extr&ecirc;me ses &eacute;changes &agrave; l'international, en baissant drastiquement les droits de douane sur les produits import&eacute;s. Car le pays a besoin de ses voisins&nbsp;: fruits et l&eacute;gumes, pi&egrave;ces automobiles, m&eacute;dicaments, etc. sont en grande partie import&eacute;s. Quant aux exportateurs britanniques, ils devront d&eacute;sormais prouver que leurs marchandises respectent les r&egrave;gles europ&eacute;ennes, entra&icirc;nant de longs et co&ucirc;teux processus de v&eacute;rifications &agrave; la douane.</p>
+<p>Pour &eacute;viter les vides juridiques laiss&eacute;s par l'abrogation du jour au lendemain de milliers de lois europ&eacute;ennes en vigueur outre-Manche, Londres r&eacute;-adoptera via une loi fourre-tout l'int&eacute;gralit&eacute; du droit europ&eacute;en, le transformant en droit britannique. Le statut des quelque 1,3 millions de Britanniques install&eacute;s dans d'autres pays de l'UE, tout comme celui des 3,7 millions d'Europ&eacute;ens au Royaume-Uni, restera quant &agrave; lui pr&eacute;caire et flou. Ils devront au plus vite s'enregistrer comme r&eacute;sident aupr&egrave;s des autorit&eacute;s britanniques afin de continuer &agrave; vivre outre-Manche.</p>
+<p>Les "Brexiters" jubilent : le pays ne contribuera plus &agrave; hauteur de 13 milliards au budget f&eacute;d&eacute;ral, mais il devra aussi dire au revoir aux subventions europ&eacute;ennes, telles que la Politique agricole commune (trois milliards vers&eacute;s aux fermiers britanniques). Enfin, &agrave; la fronti&egrave;re irlandaise, l'obligation d'&eacute;tablir une s&eacute;paration ravivera&nbsp;les tensions.</p>
+<p></p>
+<h2 class="number" id="parlement"><span>3</span>Le&nbsp;Parlement britannique ne veut&nbsp;ni d'un "no deal" ni d'un report du Brexit</h2>
+<p></p>
+<p>Si une sortie sans accord ressemble &agrave; un saut dans le vide, &agrave; ce stade, ne pas voter le report du Brexit, jeudi 14 mars, revient plut&ocirc;t &agrave; foncer dans le mur. De fait, ce&nbsp;r&eacute;sultat entra&icirc;nerait&nbsp;soit&nbsp;une sortie de l'UE&nbsp;sans accord, m&ecirc;me si ce sc&eacute;nario incertain et in&eacute;dit aurait&nbsp;&eacute;t&eacute; &eacute;cart&eacute; mercredi, soit la tenue d'un nouveau vote sur le texte inchang&eacute; et rejet&eacute; mardi.</p>
+<p>A moins, bien s&ucirc;r, que les d&eacute;put&eacute;s ne votent un amendement surprise envisageant un nouveau sc&eacute;nario &ndash; comme celui, peu probable, d'un nouveau r&eacute;f&eacute;rendum&nbsp;&ndash; ou qu'un coup de th&eacute;&acirc;tre ne secoue la Chambre des&nbsp;communes, comme l'implosion du gouvernement de Theresa May.</p>
+<p>Londres pourrait aussi d&eacute;cider contre toute attente d'annuler sa demande de sortie de l'Union europ&eacute;enne, en annulant unilat&eacute;ralement <a href="/monde/europe/la-grande-bretagne-et-l-ue/londres-activera-l-article-50-du-traite-de-lisbonne-le-29-mars-enclenchant-ainsi-la-procedure-du-brexit_2106230.html">le fameux article 50 du trait&eacute; de Lisbonne</a>, lequel active la proc&eacute;dure de sortie. Une option invraisemblable sur le papier, mais possible juridiquement.</p>
+<p></p>
+<h2 class="number" id="ue"><span>4</span>L'Union europ&eacute;enne rejette le report du Brexit</h2>
+<p></p>
+<p>Si le Parlement choisit de reporter le Brexit jeudi, encore faut-il pour le Royaume-Uni qu'il ait l'aval des 27 pays membres de l'Union europ&eacute;enne, jeudi 21 et vendredi 22 mars, lors d'un Conseil europ&eacute;en. Or, ces derniers n'entendent pas laisser Londres profiter d'une rallonge ind&eacute;termin&eacute;e. Une&nbsp;demande de report sans la perspective d'un accord &agrave; port&eacute;e de main pourrait &ecirc;tre refus&eacute;e.</p>
+<p>Selon un responsable europ&eacute;en cit&eacute; lundi par l'AFP, les&nbsp;dirigeants des 27 craignent d'approuver<em> "une prolongation qui au final ne servirait qu'&agrave; repousser juste avant l'&eacute;t&eacute; le Brexit dur".</em> Ainsi, les Europ&eacute;ens sont tout &agrave; fait dispos&eacute;s &agrave; accorder un d&eacute;lai court aux Britanniques leur permettant de r&eacute;gler quelques dispositions techniques. En revanche,&nbsp;un report de longue dur&eacute;e (sup&eacute;rieur &agrave; quelques semaines) devrait s'appuyer sur<em> "une vraie justification comme l'organisation d'&eacute;lections, d'un r&eacute;f&eacute;rendum ou un changement de la position britannique"</em>.</p>
+<p>Parmi les probl&egrave;mes que poseraient un report trop long figure notamment celui des &eacute;lections europ&eacute;ennes, pr&eacute;vues&nbsp;le 26 mai. D'un point de vue juridique, le Royaume-Uni serait dans l'obligation d'organiser ce scrutin sur son territoire s'il devait encore &ecirc;tre membre de l'UE au moment de la session inaugurale du nouveau Parlement europ&eacute;en d&eacute;but juillet. Enfin, les dirigeants des 27<span>&nbsp;n'ont eu de cesse de rappeler que l'accord soumis aux parlementaires britanniques le 12 mars reste<em> "le seul possible"</em>.</span></p>
