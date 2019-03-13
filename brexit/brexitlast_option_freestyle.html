@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://d3js.org/d3.v4.js"></script>
+<style>
+
+body {
+	max-width:940px;
+}
+
+#wholeApp {
+	max-width:940px;
+	position:relative;
+}
+</style>
+
+</head>
+<body>
+
+	<div id="wholeApp">
+	</div>
+
+</body>
+
+<script>
+
+function closy() {
+		  div.style("opacity", 0)
+	}
+
+var wholeApp = document.getElementById("wholeApp");	
+var wholeWidth = wholeApp.clientWidth;
+
+d3.xml("https://nicolasenault.github.io/brexit/Brexit3_freestyle.svg").mimeType("image/svg+xml").get(function(error, xml) {
+	if (error) throw error;
+	var importedNode = document.importNode(xml.documentElement, true);
+	d3.select("div#wholeApp")
+	.each(function() {
+		this.appendChild(importedNode);
+	})
+	
+	var svg = d3.select('svg'),
+          c = d3.select('g');
+});
+
+var div = d3.select("#wholeApp").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+    (function() {
+        // listen messages to send height in real time (for embeds)
+        window.addEventListener('message', function(e) {
+            // retrieve the source of the event
+            var parent = e.source;
+            var prevHeight = 0;
+            var comp = document.getElementById('wholeApp');
+            // loop each seconds
+            setInterval(function() {
+                if (prevHeight !== comp.offsetHeight) {
+                    // send back the height of the component when it changed
+                    parent.postMessage({
+                        fid: e.data.fid,
+                        height: comp.offsetHeight
+                    }, e.origin);
+                }
+                prevHeight = comp.offsetHeight;
+            }, 1000);
+        });
+    })();
+		
+</script>
